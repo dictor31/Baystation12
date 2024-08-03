@@ -1,0 +1,26 @@
+"a" = (/turf/simulated/wall,/area/space)
+"b" = (/turf/simulated/floor/fixed,/area/holodeck)
+"d" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor/fixed,/area/holodeck)
+
+(1,1,1) = {"
+aaaaaaaaaaaaaaaaaaa
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbbbbbbbbbbbbbbba
+abbbdbbbbbbbbbbbbba
+aaaaaaaaaaaaaaaaaaa
+"}
