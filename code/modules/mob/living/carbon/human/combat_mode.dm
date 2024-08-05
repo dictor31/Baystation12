@@ -1,5 +1,5 @@
 /mob/living/carbon/human/verb/combat_mode()
-	set name = "CombatModeToggle"
+	set name = "CombatMode"
 	set instant = 1
 	set hidden = 0
 	set category = "IC"
@@ -12,8 +12,8 @@
 	if(H.combat_mode)
 		H.combat_mode = 0
 		to_chat(H, "Я выдохся")
-		//H.combat_mode_icon.icon_state = "cmbt0"
-		//H << 'sound/webbers/ui_toggleoff.ogg'
+//		H.combat_mode_icon.icon_state = "cmbt0"
+//		H << 'sound/webbers/ui_toggleoff.ogg'
 //		H << sound(null, repeat = 0, wait = 0, volume = src?.client?.prefs?.music_volume, channel = 12)
 //		var/list/sounds_list = H.client.SoundQuery()
 //		for(var/playing_sound in sounds_list)
@@ -54,3 +54,29 @@
 
 //		var/sound/S = sound(pick('sound/fortress_suspense/suspense1.ogg','sound/fortress_suspense/suspense2.ogg','sound/fortress_suspense/suspense3.ogg','sound/fortress_suspense/suspense4.ogg','sound/fortress_suspense/suspense5.ogg','sound/fortress_suspense/suspense6.ogg','sound/fortress_suspense/suspense7.ogg','sound/fortress_suspense/suspense8.ogg'), repeat = 1, wait = 0, volume = src?.client?.prefs?.music_volume, channel = 12)
 //		S.environment = A.sound_env
+/mob/living/carbon/human/verb/plus_intent()
+	set name = "Выбрать интент"
+	set category = "IC"
+
+	var/mob/living/carbon/human/H = usr
+	if (H.combat_mode)
+		if (a_intent == I_HELP)
+			cast_spell += 1
+		if (a_intent == I_DISARM)
+			cast_spell += 2
+		if (a_intent == I_GRAB)
+			cast_spell += 3
+		if (a_intent == I_HURT)
+			cast_spell += 4
+	else
+		to_chat(usr, "Я не готов к бою")
+
+/mob/living/carbon/human/verb/create_spell()
+	set name = "Наколдовать"
+	set category = "IC"
+
+	var/mob/living/carbon/human/H = usr
+	if(H.combat_mode)
+		if(cast_spell > 5)
+			var/spell/S = new
+			H.add_spell()

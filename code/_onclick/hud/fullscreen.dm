@@ -1,6 +1,7 @@
 
 /mob
 	var/combat_mode = 0
+	var/cast_spell = 0
 	var/list/screens = list()
 
 /mob/proc/set_fullscreen(condition, screen_name, screen_type, arg)
