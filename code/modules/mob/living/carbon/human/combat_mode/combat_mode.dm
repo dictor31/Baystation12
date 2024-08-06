@@ -1,9 +1,5 @@
 /mob
 	var/combat_mode = 0
-	var/list/cast_spell = list()
-	var/list/all_spells = list()
-	var/list/knowledge_spells = list()
-
 
 /mob/living/carbon/human/verb/combat_mode()
 	set name = "Боевой режим"
@@ -87,8 +83,8 @@
 
 	var/mob/living/carbon/human/H = usr
 	if(H.combat_mode)
-		if(list(I_HURT, I_GRAB) ~= cast_spell)
-			var/spell/S = new /spell/targeted/projectile/dumbfire/fireball
+		if(SPELL_FIREBALL ~= cast_spell)
+			var/spell/S = new /spell/aoe_turf/blink
 			S.perform()
 		cast_spell?.Cut()
 
