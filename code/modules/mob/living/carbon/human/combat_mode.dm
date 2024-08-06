@@ -1,7 +1,13 @@
+/mob
+	var/combat_mode = 0
+	var/list/cast_spell = list()
+	var/list/all_spells = list()
+	var/list/knowledge_spells = list()
+
+
 /mob/living/carbon/human/verb/combat_mode()
-	set name = "CombatMode"
+	set name = "Боевой режим"
 	set instant = 1
-	set hidden = 0
 	set category = "IC"
 	var/mob/living/carbon/human/H = usr
 	H.toggle_combat_mode()
@@ -54,22 +60,25 @@
 
 //		var/sound/S = sound(pick('sound/fortress_suspense/suspense1.ogg','sound/fortress_suspense/suspense2.ogg','sound/fortress_suspense/suspense3.ogg','sound/fortress_suspense/suspense4.ogg','sound/fortress_suspense/suspense5.ogg','sound/fortress_suspense/suspense6.ogg','sound/fortress_suspense/suspense7.ogg','sound/fortress_suspense/suspense8.ogg'), repeat = 1, wait = 0, volume = src?.client?.prefs?.music_volume, channel = 12)
 //		S.environment = A.sound_env
-/mob/living/carbon/human/verb/plus_intent()
-	set name = "Выбрать интент"
+/mob/verb/cast_plus_intent()
 	set category = "IC"
+	set hidden = 1
 
 	var/mob/living/carbon/human/H = usr
 	if (H.combat_mode)
-		if (a_intent == I_HELP)
-			cast_spell += 1
-		if (a_intent == I_DISARM)
-			cast_spell += 2
-		if (a_intent == I_GRAB)
-			cast_spell += 3
-		if (a_intent == I_HURT)
-			cast_spell += 4
-	else
-		to_chat(usr, "Я не готов к бою")
+		switch(a_intent)
+			if (I_HELP)
+				cast_spell += I_HELP
+				to_chat(H, "помощь")
+			if (I_DISARM)
+				cast_spell += I_DISARM
+				to_chat(H, "обезоруживание")
+			if (I_GRAB)
+				cast_spell += I_GRAB
+				to_chat(H, "захват")
+			if (I_HURT)
+				cast_spell += I_HURT
+				to_chat(H, "урон")
 
 /mob/living/carbon/human/verb/create_spell()
 	set name = "Наколдовать"
@@ -77,6 +86,7 @@
 
 	var/mob/living/carbon/human/H = usr
 	if(H.combat_mode)
-		if(cast_spell > 5)
-			var/spell/S = new
-			H.add_spell()
+		if(list(I_HURT, I_GRAB) ~= cast_spell)
+			var/spell/S = new /spell/targeted/projectile/dumbfire/fireball
+			S.perform()
+		cast_spell?.Cut()
