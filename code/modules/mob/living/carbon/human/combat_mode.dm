@@ -66,19 +66,20 @@
 
 	var/mob/living/carbon/human/H = usr
 	if (H.combat_mode)
-		switch(a_intent)
-			if (I_HELP)
-				cast_spell += I_HELP
-				to_chat(H, "помощь")
-			if (I_DISARM)
-				cast_spell += I_DISARM
-				to_chat(H, "обезоруживание")
-			if (I_GRAB)
-				cast_spell += I_GRAB
-				to_chat(H, "захват")
-			if (I_HURT)
-				cast_spell += I_HURT
-				to_chat(H, "урон")
+		if(cast_spell.len < 4)
+			switch(a_intent)
+				if (I_HELP)
+					cast_spell += I_HELP
+					to_chat(H, "помощь")
+				if (I_DISARM)
+					cast_spell += I_DISARM
+					to_chat(H, "обезоруживание")
+				if (I_GRAB)
+					cast_spell += I_GRAB
+					to_chat(H, "захват")
+				if (I_HURT)
+					cast_spell += I_HURT
+					to_chat(H, "урон")
 
 /mob/living/carbon/human/verb/create_spell()
 	set name = "Наколдовать"
@@ -90,3 +91,10 @@
 			var/spell/S = new /spell/targeted/projectile/dumbfire/fireball
 			S.perform()
 		cast_spell?.Cut()
+
+
+/mob/living/carbon/human/verb/delete_cast_spell()
+	set name = "Очистить заклинание"
+	set category = "IC"
+
+	cast_spell?.Cut()

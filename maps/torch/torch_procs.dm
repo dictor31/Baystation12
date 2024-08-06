@@ -84,7 +84,7 @@
 	return desc
 
 /datum/map/torch/do_interlude_teleport(atom/movable/target, atom/destination, duration = 30 SECONDS, precision, type)
-	var/turf/T = pick_area_turf(/area/bluespace_interlude/platform, list(/proc/not_turf_contains_dense_objects, /proc/IsTurfAtmosSafe))
+	var/turf/T = pick_area_turf(/*/area/bluespace_interlude/platform,*/ list(/proc/not_turf_contains_dense_objects, /proc/IsTurfAtmosSafe))
 
 	if (!T && destination)
 		do_teleport(target, destination)
