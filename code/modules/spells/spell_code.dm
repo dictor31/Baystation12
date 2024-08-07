@@ -64,6 +64,7 @@ var/global/list/spells = typesof(/spell) //needed for the badmin verb for now
 	var/obj/screen/connected_button
 
 	var/hidden_from_codex = FALSE
+	var/list/cast_combo = list()
 
 ///////////////////////
 ///SETUP AND PROCESS///

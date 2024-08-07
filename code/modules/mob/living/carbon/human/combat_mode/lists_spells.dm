@@ -1,5 +1,9 @@
 /mob
-	var/list/cast_spell = list()
+	var/list/cast_spell_bar = list()
 	var/list/knowledge_spells = list()
 
-	var/list/SPELL_FIREBALL = list(I_HURT, I_HURT, I_HURT)
+/mob/proc/get_knowledge_spells()
+	var/mob/living/carbon/human/H = usr
+	var/assigned_mob = H.mind.assigned_role
+	if(assigned_mob == "Chief Steward")
+		knowledge_spells = list(/spell/targeted/projectile/dumbfire/fireball, /spell/aoe_turf/blink)

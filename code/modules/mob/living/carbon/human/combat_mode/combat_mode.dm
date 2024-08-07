@@ -33,6 +33,7 @@
 //				H.update_inv_wear_mask()
 	else
 		H.combat_mode = 1
+		get_knowledge_spells()
 		to_chat(H, "Я готов трахать")
 //		H.combat_mode_icon.icon_state = "cmbt1"
 //		H << 'sound/webbers/ui_toggle.ogg'
@@ -62,19 +63,19 @@
 
 	var/mob/living/carbon/human/H = usr
 	if (H.combat_mode)
-		if(cast_spell.len < 4)
+		if(cast_spell_bar.len < 4)
 			switch(a_intent)
 				if (I_HELP)
-					cast_spell += I_HELP
+					cast_spell_bar += I_HELP
 					to_chat(H, "помощь")
 				if (I_DISARM)
-					cast_spell += I_DISARM
+					cast_spell_bar += I_DISARM
 					to_chat(H, "обезоруживание")
 				if (I_GRAB)
-					cast_spell += I_GRAB
+					cast_spell_bar += I_GRAB
 					to_chat(H, "захват")
 				if (I_HURT)
-					cast_spell += I_HURT
+					cast_spell_bar += I_HURT
 					to_chat(H, "урон")
 
 /mob/living/carbon/human/verb/create_spell()
@@ -83,14 +84,15 @@
 
 	var/mob/living/carbon/human/H = usr
 	if(H.combat_mode)
-		if(SPELL_FIREBALL ~= cast_spell)
-			var/spell/S = new /spell/aoe_turf/blink
-			S.perform()
-		cast_spell?.Cut()
+		for (var/S in knowledge_spells)
+			var/spell/G = S
+			if(G.cast_combo ~= cast_spell_bar)
+				var/spell/M = new G
+				M.perform()
+		cast_spell_bar?.Cut()
 
-
-/mob/living/carbon/human/verb/delete_cast_spell()
+/mob/living/carbon/human/verb/delete_cast_spell_bar()
 	set name = "Очистить заклинание"
 	set category = "IC"
 
-	cast_spell?.Cut()
+	cast_spell_bar?.Cut()
