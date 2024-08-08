@@ -169,7 +169,6 @@
 	#include "TestMap.dmm"
 
 	#include "../away/empty.dmm"
-	#include "../away/mining/mining.dm"
 	#include "../away/derelict/derelict.dm"
 	#include "../away/bearcat/bearcat.dm"
 	#include "../away/lost_supply_base/lost_supply_base.dm"
@@ -193,10 +192,6 @@
 	#include "../event/iccgn_ship/icgnv_hound.dm"
 	#include "../event/sfv_arbiter/sfv_arbiter.dm"
 	#include "../event/placeholders/placeholders.dm"
-	#include "../event/empty/empty.dm"
-
-//	#include "../bluespace_interlude/bluespace_interlude.dm"
-//	#include "../bluespace_interlude/bluespace_interlude.dmm"
 
 
 	#define using_map_DATUM /datum/map/torch
