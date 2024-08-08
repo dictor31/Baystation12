@@ -1,5 +1,5 @@
 #include "casino_areas.dm"
-#include "../mining/mining_areas.dm"
+//#include "../mining/mining_areas.dm"
 
 /obj/overmap/visitable/ship/casino
 	name = "passenger liner"

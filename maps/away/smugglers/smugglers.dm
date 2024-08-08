@@ -1,5 +1,5 @@
 #include "smugglers_areas.dm"
-#include "../mining/mining_areas.dm"
+//#include "../mining/mining_areas.dm"
 
 /obj/overmap/visitable/sector/smugglers
 	name = "asteroid station"

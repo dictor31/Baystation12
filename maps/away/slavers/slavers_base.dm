@@ -1,5 +1,5 @@
 #include "slavers_base_areas.dm"
-#include "../mining/mining_areas.dm"
+//#include "../mining/mining_areas.dm"
 
 /obj/overmap/visitable/sector/slavers_base
 	name = "large asteroid"

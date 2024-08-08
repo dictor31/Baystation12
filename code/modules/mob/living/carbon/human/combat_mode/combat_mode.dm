@@ -84,10 +84,9 @@
 
 	var/mob/living/carbon/human/H = usr
 	if(H.combat_mode)
-		for (var/S in H.mind?.learned_spells)
-			var/spell/G = S
-			if(G.cast_combo ~= cast_spell_bar)
-				G.perform()
+		for (var/spell/S in H.mind?.learned_spells)
+			if(S.cast_combo ~= cast_spell_bar)
+				S.perform()
 				break
 		cast_spell_bar?.Cut()
 

@@ -1,5 +1,5 @@
 #include "lost_supply_base_areas.dm"
-#include "../mining/mining_areas.dm"
+//#include "../mining/mining_areas.dm"
 
 /obj/overmap/visitable/sector/lost_supply_base
 	name = "supply station"
