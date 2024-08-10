@@ -1109,109 +1109,109 @@ window "rpane"
 		saved-params = "splitter"
 		right = "outputwindow"
 		is-vert = false
-	elem "linksource"
-		type = BUTTON
-		pos = 536,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		saved-params = "is-checked"
-		text = "Source"
-		command = "link-source"
-	elem "linkissue"
-		type = BUTTON
-		pos = 596,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		saved-params = "is-checked"
-		text = "Bug Report"
-		command = "link-issue"
-	elem "linkrules"
-		type = BUTTON
-		pos = 120,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		saved-params = "is-checked"
-		text = "Rules"
-		command = "link-rules"
-		group = "rpanemode"
-	elem "changelog"
-		type = BUTTON
-		pos = 476,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		saved-params = "is-checked"
-		text = "Changelog"
-		command = "Changelog"
-		group = "rpanemode"
-	elem "linklore"
-		type = BUTTON
-		pos = 208,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		saved-params = "is-checked"
-		text = "Lore"
-		command = "link-lore"
-		group = "rpanemode"
-	elem "linkforum"
-		type = BUTTON
-		pos = 328,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		saved-params = "is-checked"
-		text = "Forum"
-		command = "link-forum"
-		group = "rpanemode"
-	elem "linkdiscord"
-		type = BUTTON
-		pos = 388,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		saved-params = "is-checked"
-		text = "Discord"
-		command = "link-discord"
-		group = "rpanemode"
-	elem "linkwiki"
-		type = BUTTON
-		pos = 268,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		saved-params = "is-checked"
-		text = "Wiki"
-		command = "link-wiki"
-		group = "rpanemode"
-	elem "textb"
-		type = BUTTON
-		pos = 0,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		is-visible = false
-		saved-params = "is-checked"
-		text = "Text"
-		command = ".winset \"rpanewindow.left=;\""
-		is-checked = true
-		group = "rpanemode"
-		button-type = pushbox
-	elem "infob"
-		type = BUTTON
-		pos = 60,0
-		size = 60x15
-		anchor1 = none
-		anchor2 = none
-		is-visible = false
-		saved-params = "is-checked"
-		text = "Info"
-		command = ".winset \"rpanewindow.left=infowindow\""
-		group = "rpanemode"
-		button-type = pushbox
+	// elem "linksource"
+	// 	type = BUTTON
+	// 	pos = 536,0
+	// 	size = 60x15
+	// 	anchor1 = none
+	// 	anchor2 = none
+	// 	saved-params = "is-checked"
+	// 	text = "Source"
+	// 	command = "link-source"
+	// elem "linkissue"
+	// 	type = BUTTON
+	// 	pos = 596,0
+	// 	size = 60x15
+	// 	anchor1 = none
+	// 	anchor2 = none
+	// 	saved-params = "is-checked"
+	// 	text = "Bug Report"
+	// 	command = "link-issue"
+	// elem "linkrules"
+	// 	type = BUTTON
+	// 	pos = 120,0
+	// 	size = 60x15
+	// 	anchor1 = none
+	// 	anchor2 = none
+	// 	saved-params = "is-checked"
+	// 	text = "Rules"
+	// 	command = "link-rules"
+	// 	group = "rpanemode"
+	// elem "changelog"
+	// 	type = BUTTON
+	// 	pos = 476,0
+	// 	size = 60x15
+	// 	anchor1 = none
+	// 	anchor2 = none
+	// 	saved-params = "is-checked"
+	// 	text = "Changelog"
+	// 	command = "Changelog"
+	// 	group = "rpanemode"
+	// elem "linklore"
+	// 	type = BUTTON
+	// 	pos = 208,0
+	// 	size = 60x15
+	// 	anchor1 = none
+	// 	anchor2 = none
+	// 	saved-params = "is-checked"
+	// 	text = "Lore"
+	// 	command = "link-lore"
+	// 	group = "rpanemode"
+	// elem "linkforum"
+	// 	type = BUTTON
+	// 	pos = 328,0
+	// 	size = 60x15
+	// 	anchor1 = none
+	// 	anchor2 = none
+	// 	saved-params = "is-checked"
+	// 	text = "Forum"
+	// 	command = "link-forum"
+	// 	group = "rpanemode"
+	// elem "linkdiscord"
+	// 	type = BUTTON
+	// 	pos = 388,0
+	// 	size = 60x15
+	// 	anchor1 = none
+	// 	anchor2 = none
+	// 	saved-params = "is-checked"
+	// 	text = "Discord"
+	// 	command = "link-discord"
+	// 	group = "rpanemode"
+	// elem "linkwiki"
+	// 	type = BUTTON
+	// 	pos = 268,0
+	// 	size = 60x15
+	// 	anchor1 = none
+	// 	anchor2 = none
+	// 	saved-params = "is-checked"
+	// 	text = "Wiki"
+	// 	command = "link-wiki"
+	// 	group = "rpanemode"
+	// elem "textb"
+	// 	type = BUTTON
+	// 	pos = 0,0
+	// 	size = 60x15
+	// 	anchor1 = none
+	// 	anchor2 = none
+	// 	is-visible = false
+	// 	saved-params = "is-checked"
+	// 	text = "Text"
+	// 	command = ".winset \"rpanewindow.left=;\""
+	// 	is-checked = true
+	// 	group = "rpanemode"
+	// 	button-type = pushbox
+	// elem "infob"
+	// 	type = BUTTON
+	// 	pos = 60,0
+	// 	size = 60x15
+	// 	anchor1 = none
+	// 	anchor2 = none
+	// 	is-visible = false
+	// 	saved-params = "is-checked"
+	// 	text = "Info"
+	// 	command = ".winset \"rpanewindow.left=infowindow\""
+	// 	group = "rpanemode"
+	// 	button-type = pushbox
 
 window "infowindow"
 	elem "infowindow"

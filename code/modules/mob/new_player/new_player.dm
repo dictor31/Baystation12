@@ -33,34 +33,23 @@
 		return
 	var/list/output = list()
 	output += "<div align='center'>"
-	if (config.wiki_url || config.rules_url || config.lore_url)
-		var/player_age = client?.player_age
-		if (isnum(player_age) && player_age < 7)
-			output += "<b>Welcome! Please check out these links:</b><br>"
-		if (config.wiki_url)
-			output += "<a href='byond://?src=\ref[src];show_wiki=1'>Wiki</a>"
-		if (config.rules_url)
-			output += "<a href='byond://?src=\ref[src];show_rules=1'>Rules</a>"
-		if (config.lore_url)
-			output += "<a href='byond://?src=\ref[src];show_lore=1'>Lore</a>"
-	output += "<hr>"
 	if (GAME_STATE > RUNLEVEL_LOBBY)
 		output += "<a href='byond://?src=\ref[src];manifest=1'>Manifest</a>"
-	output += "<a href='byond://?src=\ref[src];show_preferences=1'>Options</a>"
+	output += "<a href='byond://?src=\ref[src];show_preferences=1'>Настройка персонажа</a>"
 	output += "<hr>"
-	output += "<b>Playing As</b><br>"
+	output += "<b>Твоё имя:</b><br>"
 	output += "<a href='byond://?src=\ref[client.prefs];load=1;details=1'>[client.prefs.real_name || "(Random)"]</a><br>"
 	output += client.prefs.job_high ? "[client.prefs.job_high]" : null
 	output += "<hr>"
-	output += "<a href='byond://?src=\ref[src];observe=1'>Join As Observer</a>"
+	output += "<a href='byond://?src=\ref[src];observe=1'>Стать наблюдателем</a>"
 	if (GAME_STATE > RUNLEVEL_LOBBY)
-		output += "<a href='byond://?src=\ref[src];late_join=1'>Join As Selected</a>"
+		output += "<a href='byond://?src=\ref[src];late_join=1'>Приготовиться</a>"
 	else
-		output += "<a [ready?"class='linkOn'":""] href='byond://?src=\ref[src];ready=[!ready]'>Round Start Join</a>"
-	output += "<hr>"
-	output += "<i>[GLOB.using_map.get_map_info()||"No information available for the current map."]</i>"
-	output += "</div>"
-	panel = new (src, "Welcome","Welcome to [GLOB.using_map.full_name]", 560, 340, src)
+		output += "<a [ready?"class='linkOn'":""] href='byond://?src=\ref[src];ready=[!ready]'>Присоединиться</a>"
+	//output += "<hr>"
+	//output += "<i>[GLOB.using_map.get_map_info()||"No information available for the current map."]</i>"
+	//output += "</div>"
+	panel = new (src, "Welcome", "", 560, 340, src)
 	panel.set_window_options("can_close=0")
 	panel.set_content(output.Join())
 	panel.open()
@@ -113,15 +102,6 @@
 		return TOPIC_NOACTION
 	if (href_list["show_preferences"])
 		client.prefs.open_setup_window(src)
-		return 1
-	if (href_list["show_wiki"])
-		client.link_url(config.wiki_url, "Wiki", TRUE)
-		return 1
-	if (href_list["show_rules"])
-		client.link_url(config.rules_url, "Rules", TRUE)
-		return 1
-	if (href_list["show_lore"])
-		client.link_url(config.lore_url, "Lore", TRUE)
 		return 1
 	if (href_list["ready"])
 		ready = GAME_STATE > RUNLEVEL_LOBBY ? 0 : text2num(href_list["ready"])
