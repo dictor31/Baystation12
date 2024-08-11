@@ -15,8 +15,6 @@
 	hud_state = "wiz_blink"
 	cast_sound = 'sound/magic/blink.ogg'
 
-	cast_combo = list(I_DISARM)
-
 /spell/aoe_turf/blink/cast(list/targets, mob/user)
 	if(!length(targets))
 		return

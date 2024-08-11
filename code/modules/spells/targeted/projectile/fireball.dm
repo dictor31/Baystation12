@@ -21,8 +21,6 @@
 	amt_dam_brute = 20
 	amt_dam_fire = 25
 
-	cast_combo = list(I_HURT, I_HURT, I_HURT)
-
 	var/explosion_radius = 3
 	var/explosion_max_power = EX_ACT_HEAVY
 

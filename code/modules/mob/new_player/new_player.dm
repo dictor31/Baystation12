@@ -43,9 +43,9 @@
 	output += "<hr>"
 	output += "<a href='byond://?src=\ref[src];observe=1'>Стать наблюдателем</a>"
 	if (GAME_STATE > RUNLEVEL_LOBBY)
-		output += "<a href='byond://?src=\ref[src];late_join=1'>Приготовиться</a>"
+		output += "<a href='byond://?src=\ref[src];late_join=1'>Присоединиться</a>"
 	else
-		output += "<a [ready?"class='linkOn'":""] href='byond://?src=\ref[src];ready=[!ready]'>Присоединиться</a>"
+		output += "<a [ready?"class='linkOn'":""] href='byond://?src=\ref[src];ready=[!ready]'>Приготовиться</a>"
 	//output += "<hr>"
 	//output += "<i>[GLOB.using_map.get_map_info()||"No information available for the current map."]</i>"
 	//output += "</div>"

@@ -6,3 +6,10 @@
 	var/assigned_mob = H.mind.assigned_role
 	if(assigned_mob == "Chief Steward")
 		H.mind?.learned_spells = list(new /spell/targeted/projectile/dumbfire/fireball, new /spell/aoe_turf/blink)
+
+
+/spell/targeted/projectile/dumbfire/fireball
+	cast_combo = list(I_HURT, I_HURT, I_HURT)
+
+/spell/aoe_turf/blink
+	cast_combo = list(I_DISARM)
