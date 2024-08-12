@@ -95,3 +95,15 @@
 	set category = "IC"
 
 	cast_spell_bar?.Cut()
+
+/mob/living/carbon/human/verb/remember_spells()
+	set name = "Вспомни"
+	set category = "IC"
+
+	var/mob/living/carbon/human/H = usr
+	for(var/spell/S in H.mind?.learned_spells)
+		var/combo
+		combo += "[S.name]: "
+		for(var/A in S.cast_combo)
+			combo += "[A] "
+		to_chat(H, combo)
