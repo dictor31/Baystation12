@@ -103,7 +103,21 @@
 	var/mob/living/carbon/human/H = usr
 	for(var/spell/S in H.mind?.learned_spells)
 		var/combo
-		combo += "[S.name]: "
+		var/color
+		combo += "<b>[S.name]:</b> " + "<br>"
 		for(var/A in S.cast_combo)
-			combo += "[A] "
+			switch(A)
+				if(I_HELP)
+					color = "green"
+					A = "juvare"
+				if(I_DISARM)
+					color = "blue"
+					A = "pellere"
+				if(I_GRAB)
+					color = "yellow"
+					A = "captis"
+				if(I_HURT)
+					color = "red"
+					A = "noxa"
+			combo += "<FONT COLOR = [color]><b><i>>[A] </i></b></FONT>"
 		to_chat(H, combo)
