@@ -435,6 +435,7 @@
 /mob/new_player/proc/create_character(turf/spawn_turf)
 	spawning = 1
 	close_spawn_windows()
+	get_knowledge_spells()
 
 	var/mob/living/carbon/human/new_character
 

@@ -1,5 +1,6 @@
 "a" = (/turf/simulated/wall,/area/space)
 "b" = (/turf/simulated/floor/fixed,/area/holodeck)
+"c" = (/obj/item/magic_crystal,/turf/simulated/floor/fixed,/area/holodeck)
 "d" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor/fixed,/area/holodeck)
 
 (1,1,1) = {"
@@ -21,6 +22,6 @@ abbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbba
-abbbdbbbbbbbbbbbbba
+abbbdbbbbcbbbbbbbba
 aaaaaaaaaaaaaaaaaaa
 "}

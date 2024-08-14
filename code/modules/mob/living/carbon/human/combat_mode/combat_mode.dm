@@ -33,7 +33,6 @@
 //				H.update_inv_wear_mask()
 	else
 		H.combat_mode = 1
-		get_knowledge_spells()
 		to_chat(H, "Я готов трахать")
 //		H.combat_mode_icon.icon_state = "cmbt1"
 //		H << 'sound/webbers/ui_toggle.ogg'
@@ -82,13 +81,30 @@
 	set name = "Наколдовать"
 	set category = "IC"
 
+	var/obj/item/magic_crystal/MC
 	var/mob/living/carbon/human/H = usr
+
 	if(H.combat_mode)
-		for (var/spell/S in H.mind?.learned_spells)
-			if(S.cast_combo ~= cast_spell_bar)
-				S.perform()
-				break
-		cast_spell_bar?.Cut()
+		for(var/obj/item/I in H.contents)
+			if(istype(I, /obj/item/storage))
+				for(var/obj/item/IS in I.contents)
+					if(istype(IS, /obj/item/magic_crystal))
+						MC = IS
+						for (var/spell/S in H.mind?.learned_spells)
+							if(S.cast_combo ~= cast_spell_bar)
+								S.perform()
+								break
+						cast_spell_bar?.Cut()
+						MC.charge -= 100
+			else
+				if(istype(I, /obj/item/magic_crystal))
+					MC = I
+					for (var/spell/S in H.mind?.learned_spells)
+						if(S.cast_combo ~= cast_spell_bar)
+							S.perform()
+							break
+					cast_spell_bar?.Cut()
+					MC.charge -= 100
 
 /mob/living/carbon/human/verb/delete_cast_spell_bar()
 	set name = "Очистить заклинание"
@@ -111,7 +127,7 @@
 					color = "green"
 					A = "juvare"
 				if(I_DISARM)
-					color = "blue"
+					color = "#1E90FF"
 					A = "pellere"
 				if(I_GRAB)
 					color = "yellow"
@@ -119,5 +135,5 @@
 				if(I_HURT)
 					color = "red"
 					A = "noxa"
-			combo += "<FONT COLOR = [color]><b><i>>[A] </i></b></FONT>"
+			combo += "<FONT FACE = Capoon COLOR = [color]><b><i>[A] </i></b></FONT>"
 		to_chat(H, combo)

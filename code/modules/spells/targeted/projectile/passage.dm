@@ -14,7 +14,7 @@
 
 
 	level_max = list(Sp_TOTAL = 1, Sp_SPEED = 0, Sp_POWER = 1)
-	spell_flags = NEEDSCLOTHES
+	spell_flags = 0 //NEEDSCLOTHES
 	duration = 15
 
 	proj_step_delay = 1
