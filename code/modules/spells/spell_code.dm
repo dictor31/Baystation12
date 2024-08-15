@@ -65,6 +65,7 @@ var/global/list/spells = typesof(/spell) //needed for the badmin verb for now
 
 	var/hidden_from_codex = FALSE
 	var/list/cast_combo = list()
+	var/cost_charge = 300
 
 ///////////////////////
 ///SETUP AND PROCESS///

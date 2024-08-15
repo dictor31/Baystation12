@@ -11,12 +11,16 @@
 
 /spell/targeted/projectile/dumbfire/fireball
 	cast_combo = list(I_HURT, I_HURT, I_HURT)
+	cost_charge = 500
 
 /spell/aoe_turf/blink
 	cast_combo = list(I_DISARM)
+	cost_charge = 100
 
 /spell/targeted/equip_item/burning_hand
 	cast_combo = list(I_HURT)
+	cost_charge = 200
 
 /spell/targeted/projectile/dumbfire/passage
 	cast_combo = list(I_GRAB)
+	cost_charge = 200

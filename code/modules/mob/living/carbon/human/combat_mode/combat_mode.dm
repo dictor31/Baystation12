@@ -1,5 +1,6 @@
 /mob
 	var/combat_mode = 0
+	var/crystal = 0
 
 /mob/living/carbon/human/verb/combat_mode()
 	set name = "Боевой режим"
@@ -14,6 +15,7 @@
 	if(H.combat_mode)
 		H.combat_mode = 0
 		to_chat(H, "Я выдохся")
+
 //		H.combat_mode_icon.icon_state = "cmbt0"
 //		H << 'sound/webbers/ui_toggleoff.ogg'
 //		H << sound(null, repeat = 0, wait = 0, volume = src?.client?.prefs?.music_volume, channel = 12)
@@ -85,26 +87,36 @@
 	var/mob/living/carbon/human/H = usr
 
 	if(H.combat_mode)
-		for(var/obj/item/I in H.contents)
-			if(istype(I, /obj/item/storage))
-				for(var/obj/item/IS in I.contents)
-					if(istype(IS, /obj/item/magic_crystal))
-						MC = IS
-						for (var/spell/S in H.mind?.learned_spells)
-							if(S.cast_combo ~= cast_spell_bar)
-								S.perform()
-								break
-						cast_spell_bar?.Cut()
-						MC.charge -= 100
-			else
-				if(istype(I, /obj/item/magic_crystal))
-					MC = I
-					for (var/spell/S in H.mind?.learned_spells)
-						if(S.cast_combo ~= cast_spell_bar)
-							S.perform()
-							break
-					cast_spell_bar?.Cut()
-					MC.charge -= 100
+		have_crystal()
+		if(crystal)
+			MC = crystal
+			for (var/spell/S in H.mind?.learned_spells)
+				if(MC.charge >= S.cost_charge)
+					if(S.cast_combo ~= cast_spell_bar)
+						S.perform()
+						MC.charge -= S.cost_charge
+						break
+				else
+					to_chat(H, "У меня недостаточно сил")
+					break
+			cast_spell_bar?.Cut()
+		else
+			to_chat(H, "У меня нет моей прелести")
+			cast_spell_bar?.Cut()
+
+/mob/living/carbon/human/proc/have_crystal()
+	crystal = 0
+	var/mob/living/carbon/human/H = usr
+	for(var/obj/item/I in H.contents)
+		if(istype(I, /obj/item/magic_crystal))
+			crystal = I
+			break
+		else
+			for(var/obj/item/storage/I2 in I.contents)
+				if(istype(I2, /obj/item/magic_crystal))
+					crystal = I2
+					break
+
 
 /mob/living/carbon/human/verb/delete_cast_spell_bar()
 	set name = "Очистить заклинание"
