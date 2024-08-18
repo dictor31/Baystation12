@@ -23,7 +23,26 @@
 	if(T == H)
 		to_chat(H, "У меня нет цели...")
 		return
+	if(!can_steal_happy(T))
+		to_chat(H, "Мне нужно схватить цель, которая еще не потеряла надежду")
+		return
 
-	while(do_after(H, 5 SECONDS))
+	while(do_after(H, 0.5 SECONDS) && can_steal_happy(T))
 		H.happy += 10
 		T.happy -= 10
+
+
+/mob/living/carbon/human/proc/can_steal_happy(mob/living/carbon/human/target)
+	var/mob/living/carbon/human/H = usr
+	if(target.happy < 5)
+		return FALSE
+
+	if(target == H)
+		return FALSE
+
+	if(!(H.r_hand.type == "grab" || H.l_hand.type == "grab"))
+		return FALSE
+
+	//if(H.r_hand.affecting == target || H.l_hand.affecting == target)
+
+	return TRUE
