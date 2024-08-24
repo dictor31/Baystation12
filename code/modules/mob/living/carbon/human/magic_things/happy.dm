@@ -10,19 +10,24 @@
 	var/mob/living/carbon/human/H = usr
 	to_chat(H, "У меня [H.happy] радости")
 
-/mob/living/carbon/human/verb/verb_steal_happy(mob/target)
+/mob/living/carbon/human/verb/verb_steal_happy()
 	set name = "Украсть радость"
 	set category = "IC"
 
-	steal_happy(target)
+	var/obj/item/grab/G = src.get_active_hand()
+
+	if(!istype(G))
+		to_chat(src, SPAN_WARNING("Мне нужно схватить цель, которая еще не потеряла надежду"))
+		return
+
+	var/mob/living/carbon/human/T = G.affecting
+
+	steal_happy(T)
 
 /mob/living/carbon/human/proc/steal_happy(mob/living/carbon/human/target)
 	var/mob/living/carbon/human/H = usr
 	var/mob/living/carbon/human/T = target
 
-	if(T == H)
-		to_chat(H, "У меня нет цели...")
-		return
 	if(!can_steal_happy(T))
 		return
 
@@ -33,6 +38,11 @@
 
 /mob/living/carbon/human/proc/can_steal_happy(mob/living/carbon/human/target)
 	var/obj/item/grab/G = src.get_active_hand()
+	var/mob/living/carbon/human/H = usr
+
+	if(!target)
+		to_chat(H, "У меня нет цели...")
+		return FALSE
 
 	if(target.happy < 5)
 		to_chat(src, SPAN_WARNING("Эта цель потеряла надежду"))
@@ -44,10 +54,6 @@
 
 	var/mob/living/carbon/human/T = G.affecting
 	if(!istype(T))
-		return FALSE
-
-	if(T != target)
-		to_chat(src, SPAN_WARNING("Мне нужно держать цель, которую я хочу высосать"))
 		return FALSE
 
 	return TRUE
