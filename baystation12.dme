@@ -2234,6 +2234,7 @@
 #include "code\modules\mob\living\carbon\human\descriptors\descriptors_skrell.dm"
 #include "code\modules\mob\living\carbon\human\descriptors\descriptors_vox.dm"
 #include "code\modules\mob\living\carbon\human\machine\screen_abilities.dm"
+#include "code\modules\mob\living\carbon\human\magic_things\collectors.dm"
 #include "code\modules\mob\living\carbon\human\magic_things\combat_mode.dm"
 #include "code\modules\mob\living\carbon\human\magic_things\happy.dm"
 #include "code\modules\mob\living\carbon\human\magic_things\lists_spells.dm"

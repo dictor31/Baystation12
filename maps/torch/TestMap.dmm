@@ -2,6 +2,8 @@
 "b" = (/turf/simulated/floor/fixed,/area/holodeck)
 "c" = (/obj/item/magic_crystal,/turf/simulated/floor/fixed,/area/holodeck)
 "d" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor/fixed,/area/holodeck)
+"e" = (/mob/living/carbon/human,/turf/simulated/floor/fixed,/area/holodeck)
+"f" = (/mob/living/simple_animal/collector,/turf/simulated/floor/fixed,/area/holodeck)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaa
@@ -20,7 +22,7 @@ abbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
+abbbbebebfbbbbbbbba
 abbbbbbbbbbbbbbbbba
 abbbdbbbbcbbbbbbbba
 aaaaaaaaaaaaaaaaaaa

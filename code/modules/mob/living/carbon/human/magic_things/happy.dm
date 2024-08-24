@@ -24,7 +24,6 @@
 		to_chat(H, "У меня нет цели...")
 		return
 	if(!can_steal_happy(T))
-		to_chat(H, "Мне нужно схватить цель, которая еще не потеряла надежду")
 		return
 
 	while(do_after(H, 0.5 SECONDS) && can_steal_happy(T))
@@ -33,16 +32,22 @@
 
 
 /mob/living/carbon/human/proc/can_steal_happy(mob/living/carbon/human/target)
-	var/mob/living/carbon/human/H = usr
+	var/obj/item/grab/G = src.get_active_hand()
+
 	if(target.happy < 5)
+		to_chat(src, SPAN_WARNING("Эта цель потеряла надежду"))
 		return FALSE
 
-	if(target == H)
+	if(!istype(G))
+		to_chat(src, SPAN_WARNING("Мне нужно схватить цель"))
 		return FALSE
 
-	if(!(H.r_hand.type == "grab" || H.l_hand.type == "grab"))
+	var/mob/living/carbon/human/T = G.affecting
+	if(!istype(T))
 		return FALSE
 
-	//if(H.r_hand.affecting == target || H.l_hand.affecting == target)
+	if(T != target)
+		to_chat(src, SPAN_WARNING("Мне нужно держать цель, которую я хочу высосать"))
+		return FALSE
 
 	return TRUE
