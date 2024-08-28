@@ -228,15 +228,15 @@
 		)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
-							 /datum/computer_file/program/ntnetmonitor,
-							 /datum/computer_file/program/power_monitor,
-							 /datum/computer_file/program/supermatter_monitor,
-							 /datum/computer_file/program/alarm_monitor,
-							 /datum/computer_file/program/atmos_control,
-							 /datum/computer_file/program/rcon_console,
-							 /datum/computer_file/program/camera_monitor,
-							 /datum/computer_file/program/shields_monitor,
-							 /datum/computer_file/program/reports)
+							/datum/computer_file/program/ntnetmonitor,
+							/datum/computer_file/program/power_monitor,
+							/datum/computer_file/program/supermatter_monitor,
+							/datum/computer_file/program/alarm_monitor,
+							/datum/computer_file/program/atmos_control,
+							/datum/computer_file/program/rcon_console,
+							/datum/computer_file/program/camera_monitor,
+							/datum/computer_file/program/shields_monitor,
+							/datum/computer_file/program/reports)
 
 /datum/job/chief_engineer/get_description_blurb()
 	return "You are the Chief Engineer. You manage the Engineering Department. You are responsible for the Senior engineer, who is your right hand and (should be) an experienced, skilled engineer. Delegate to and listen to them. Manage your engineers, ensure vessel power stays on, breaches are patched and problems are fixed. Advise the CO on engineering matters. You are also responsible for the maintenance and control of any vessel synthetics. You are an experienced engineer with a wealth of theoretical knowledge. You should also know vessel regulations to a reasonable degree."
@@ -281,9 +281,9 @@
 	)
 
 	software_on_spawn = list(/datum/computer_file/program/comm,
-							 /datum/computer_file/program/digitalwarrant,
-							 /datum/computer_file/program/camera_monitor,
-							 /datum/computer_file/program/reports)
+							/datum/computer_file/program/digitalwarrant,
+							/datum/computer_file/program/camera_monitor,
+							/datum/computer_file/program/reports)
 
 /datum/job/hos/get_description_blurb()
 	return "You are the Chief of Security. You manage ship security. The Masters at Arms and the Military Police, as well as the Brig Chief and the Forensic Technician. You keep the vessel safe. You handle both internal and external security matters. You are the law. You are subordinate to the CO and the XO. You are expected to know the SCMJ and Sol law and Alert Procedure to a very high degree along with general regulations."
