@@ -11,6 +11,7 @@
 	throw_speed = 4
 	throw_range = 6
 	force = 0
+	overlay_state = "magic_crystal"
 
 
 /obj/item/clothing/accessory/magic_crystal/examine(mob/user, distance)
