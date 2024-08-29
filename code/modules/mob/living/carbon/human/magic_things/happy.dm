@@ -1,4 +1,4 @@
-/mob
+/mob/living/carbon/human
 	var/max_happy = 5000
 	var/happy = 3000
 
