@@ -122,8 +122,8 @@ var/global/list/event_last_fired = list()
 				else if(istype(R.module, /obj/item/robot_module/research))
 					active_with_role["Scientist"]++
 
-		if(M.mind.assigned_role in SSjobs.titles_by_department(ENG))
-			active_with_role["Engineer"]++
+		// if(M.mind.assigned_role in SSjobs.titles_by_department(ENG))
+		// 	active_with_role["Engineer"]++
 
 		if(M.mind.assigned_role in SSjobs.titles_by_department(MED))
 			active_with_role["Medical"]++

@@ -1,4 +1,4 @@
-var/global/const/ENG = FLAG(0)
+var/global/const/NEU = FLAG(0)
 var/global/const/SEC = FLAG(1)
 var/global/const/MED = FLAG(2)
 var/global/const/SCI = FLAG(3)

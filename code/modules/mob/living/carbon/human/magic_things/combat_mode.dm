@@ -83,7 +83,7 @@
 	set name = "Наколдовать"
 	set category = "IC"
 
-	var/obj/item/magic_crystal/MC
+	var/obj/item/clothing/accessory/magic_crystal/MC
 	var/mob/living/carbon/human/H = usr
 
 	if(H.combat_mode)
@@ -108,12 +108,12 @@
 	crystal = 0
 	var/mob/living/carbon/human/H = usr
 	for(var/obj/item/I in H.contents)
-		if(istype(I, /obj/item/magic_crystal))
+		if(istype(I, /obj/item/clothing/accessory/magic_crystal))
 			crystal = I
 			break
 		else
 			for(var/obj/item/storage/I2 in I.contents)
-				if(istype(I2, /obj/item/magic_crystal))
+				if(istype(I2, /obj/item/clothing/accessory/magic_crystal))
 					crystal = I2
 					break
 

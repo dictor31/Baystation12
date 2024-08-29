@@ -43,7 +43,7 @@
 
 	data["command_jobs"] = format_jobs(SSjobs.titles_by_department(COM))
 	data["support_jobs"] = format_jobs(SSjobs.titles_by_department(SPT))
-	data["engineering_jobs"] = format_jobs(SSjobs.titles_by_department(ENG))
+	data["magic_jobs"] = format_jobs(SSjobs.titles_by_department(NEU))
 	data["medical_jobs"] = format_jobs(SSjobs.titles_by_department(MED))
 	data["science_jobs"] = format_jobs(SSjobs.titles_by_department(SCI))
 	data["security_jobs"] = format_jobs(SSjobs.titles_by_department(SEC))

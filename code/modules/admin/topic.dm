@@ -405,8 +405,8 @@
 	//Engineering (Yellow)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
-		jobs += "<tr bgcolor='fff5cc'><th colspan='[length(SSjobs.titles_by_department(ENG))]'><a href='?src=\ref[src];jobban3=engineeringdept;jobban4=\ref[M]'>Engineering Positions</a></th></tr><tr align='center'>"
-		for(var/jobPos in SSjobs.titles_by_department(ENG))
+		jobs += "<tr bgcolor='fff5cc'><th colspan='[length(SSjobs.titles_by_department(NEU))]'><a href='?src=\ref[src];jobban3=engineeringdept;jobban4=\ref[M]'>Engineering Positions</a></th></tr><tr align='center'>"
+		for(var/jobPos in SSjobs.titles_by_department(NEU))
 			if(!jobPos)	continue
 			var/datum/job/job = SSjobs.get_by_title(jobPos)
 			if(!job) continue
@@ -673,12 +673,12 @@
 					var/datum/job/temp = SSjobs.get_by_title(jobPos)
 					if(!temp) continue
 					job_list += temp.title
-			if("engineeringdept")
-				for(var/jobPos in SSjobs.titles_by_department(ENG))
-					if(!jobPos)	continue
-					var/datum/job/temp = SSjobs.get_by_title(jobPos)
-					if(!temp) continue
-					job_list += temp.title
+			// if("engineeringdept")
+			// 	for(var/jobPos in SSjobs.titles_by_department(ENG))
+			// 		if(!jobPos)	continue
+			// 		var/datum/job/temp = SSjobs.get_by_title(jobPos)
+			// 		if(!temp) continue
+			// 		job_list += temp.title
 			if("medicaldept")
 				for(var/jobPos in SSjobs.titles_by_department(MED))
 					if(!jobPos)	continue

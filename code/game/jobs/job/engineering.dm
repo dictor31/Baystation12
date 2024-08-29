@@ -2,7 +2,7 @@
 	title = "Chief Engineer"
 	head_position = 1
 	department = "Engineering"
-	department_flag = ENG|COM
+//	department_flag = ENG|COM
 
 	total_positions = 1
 	spawn_positions = 1
@@ -24,7 +24,7 @@
 /datum/job/engineer
 	title = "Engineer"
 	department = "Engineering"
-	department_flag = ENG
+//	department_flag = ENG
 
 	total_positions = 8
 	spawn_positions = 7

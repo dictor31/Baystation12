@@ -149,8 +149,8 @@ var/global/datum/announcement/minor/minor_announcement = new(new_sound = 'sound/
 		return "Command"
 	if(job.department_flag & SEC)
 		return "Security"
-	if(job.department_flag & ENG)
-		return "Engineering"
+//	if(job.department_flag & ENG)
+//		return "Engineering"
 	if(job.department_flag & MED)
 		return "Medical"
 	if(job.department_flag & SCI)

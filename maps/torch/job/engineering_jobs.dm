@@ -1,7 +1,7 @@
 /datum/job/senior_engineer
 	title = "Senior Engineer"
 	department = "Engineering"
-	department_flag = ENG
+//	department_flag = ENG
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "the Chief Engineer"
@@ -117,7 +117,7 @@
 /datum/job/engineer_trainee
 	title = "Engineer Trainee"
 	department = "Engineering"
-	department_flag = ENG
+//	department_flag = ENG
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the Chief Engineer and Engineering Personnel"
@@ -171,7 +171,7 @@
 /datum/job/roboticist
 	title = "Roboticist"
 	department = "Engineering"
-	department_flag = ENG|ROB
+//	department_flag = ENG|ROB
 
 	total_positions = 2
 	spawn_positions = 2

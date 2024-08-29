@@ -49,7 +49,7 @@
 
 /singleton/hierarchy/mil_uniform/ec/eng
 	name = "EC engineering"
-	departments = ENG
+//	departments = ENG
 
 	utility_under = /obj/item/clothing/under/solgov/utility/expeditionary/engineering
 	utility_extra = list(/obj/item/clothing/head/beret/solgov/expedition/engineering,
@@ -98,7 +98,7 @@
 
 /singleton/hierarchy/mil_uniform/ec/eng/officer/com //Can only be officers
 	name = "EC engineering command"
-	departments = ENG|COM
+//	departments = ENG|COM
 
 /singleton/hierarchy/mil_uniform/ec/sec
 	name = "EC security"

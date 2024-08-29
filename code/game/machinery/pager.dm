@@ -70,8 +70,8 @@
 /obj/machinery/pager/science
 	department = SCI
 
-/obj/machinery/pager/engineering
-	department = ENG
+///obj/machinery/pager/engineering
+//	department = ENG
 
 /obj/machinery/pager/robotics
 	department = ROB

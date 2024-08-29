@@ -43,7 +43,7 @@
 
 /singleton/hierarchy/mil_uniform/fleet/eng
 	name = "Fleet engineering"
-	departments = ENG
+//	departments = ENG
 
 	utility_under = /obj/item/clothing/under/solgov/utility/fleet/engineering
 	utility_extra = list(
@@ -106,7 +106,7 @@
 
 /singleton/hierarchy/mil_uniform/fleet/eng/officer/com //Can only be officers
 	name = "Fleet engineering command"
-	departments = ENG|COM
+//	departments = ENG|COM
 
 /singleton/hierarchy/mil_uniform/fleet/eng/officer/com/seniorofficer
 	name = "Fleet engineering senior command"

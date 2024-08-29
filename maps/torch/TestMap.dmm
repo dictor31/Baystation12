@@ -1,6 +1,6 @@
 "a" = (/turf/simulated/wall,/area/space)
 "b" = (/turf/simulated/floor/fixed,/area/holodeck)
-"c" = (/obj/item/magic_crystal,/turf/simulated/floor/fixed,/area/holodeck)
+"c" = (/obj/item/clothing/accessory/magic_crystal,/turf/simulated/floor/fixed,/area/holodeck)
 "d" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor/fixed,/area/holodeck)
 "e" = (/mob/living/carbon/human,/turf/simulated/floor/fixed,/area/holodeck)
 "f" = (/mob/living/simple_animal/collector,/turf/simulated/floor/fixed,/area/holodeck)
