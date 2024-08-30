@@ -6,3 +6,16 @@
 	gloves = /obj/item/clothing/gloves/magic/black_w
 	flags = OUTFIT_NONE
 	l_hand = /obj/item/clothing/accessory/magic_crystal
+
+/singleton/hierarchy/outfit/medic
+	name = OUTFIT_JOB_NAME("Ученик целителя")
+	uniform = /obj/item/clothing/under/magic/medic
+	suit = /obj/item/clothing/suit/magic/medic
+	shoes = /obj/item/clothing/shoes/magic/medic
+	gloves = /obj/item/clothing/gloves/magic/medic
+	flags = OUTFIT_NONE
+	l_hand = /obj/item/clothing/accessory/magic_crystal
+
+/singleton/hierarchy/outfit/medic/head
+	name = OUTFIT_JOB_NAME("Целитель")
+	suit = /obj/item/clothing/suit/magic/head_medic

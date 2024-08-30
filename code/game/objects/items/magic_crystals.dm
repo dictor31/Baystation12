@@ -3,9 +3,10 @@
 
 	var/max_charge = 10000
 	var/charge = 5000
-	var/mob/living/carbon/human/owner = "Никто"
+	var/mob/living/carbon/human/owner = "Неизвестно"
 
 	name = "Кристалл"
+	desc = "Странный камень, который дал нам всем веру в светлое будущее"
 	icon = 'icons/obj/magic/magic.dmi'
 	icon_state = "normal"
 	throwforce = 0
@@ -28,4 +29,4 @@
 	to_chat(user, SPAN_NOTICE("В кристалле осталось [round(charge)] заряда."))
 
 /obj/item/clothing/accessory/magic_crystal/proc/examine_owner(mob/user)
-	to_chat(user, SPAN_NOTICE("Этот кристалл верен [owner]"))
+	to_chat(user, SPAN_NOTICE("Этот кристалл принадлежит [owner]"))

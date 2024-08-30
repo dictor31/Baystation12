@@ -101,7 +101,7 @@
 					break
 			cast_spell_bar?.Cut()
 		else
-			to_chat(H, "У меня нет моей прелести")
+			to_chat(H, "У меня нет МОЕЙ прелести")
 			cast_spell_bar?.Cut()
 
 /mob/living/carbon/human/proc/have_crystal()

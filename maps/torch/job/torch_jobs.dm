@@ -34,7 +34,7 @@
 		// /datum/job/chaplain,
 		// /datum/job/assistant,
 		// /datum/job/merchant
-		/datum/job/collector
+		/datum/job/collector, /datum/job/junior_medic, /datum/job/head_medic
 	)
 
 	access_modify_region = list(
