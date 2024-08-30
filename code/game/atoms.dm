@@ -383,7 +383,7 @@
 			f_name = "a "
 		f_name += "[SPAN_COLOR(blood_color, "stained")] [name][infix]!"
 
-	to_chat(user, "[icon2html(src, user)] That's [f_name] [suffix]")
+	to_chat(user, "[icon2html(src, user)] Это [f_name]")
 	to_chat(user, desc)
 	if (get_max_health())
 		examine_damage_state(user)

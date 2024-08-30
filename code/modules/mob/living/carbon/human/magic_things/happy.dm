@@ -38,10 +38,9 @@
 
 /mob/living/carbon/human/proc/can_steal_happy(mob/living/carbon/human/target)
 	var/obj/item/grab/G = src.get_active_hand()
-	var/mob/living/carbon/human/H = usr
 
 	if(!target)
-		to_chat(H, "У меня нет цели...")
+		to_chat(src, SPAN_WARNING("У меня нет цели"))
 		return FALSE
 
 	if(target.happy < 5)

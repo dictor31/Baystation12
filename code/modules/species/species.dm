@@ -376,12 +376,13 @@ The slots that you can use are found in items_clothing.dm and are the inventory 
 		organ_data["descriptor"] = initial(limb_path.name)
 
 /datum/species/proc/equip_survival_gear(mob/living/carbon/human/H,extendedtank = 1)
-	if(istype(H.get_equipped_item(slot_back), /obj/item/storage/backpack))
-		if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/storage/box/engineer(H.back), slot_in_backpack)
-		else	H.equip_to_slot_or_del(new /obj/item/storage/box/survival(H.back), slot_in_backpack)
-	else
-		if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/storage/box/engineer(H), slot_r_hand)
-		else	H.equip_to_slot_or_del(new /obj/item/storage/box/survival(H), slot_r_hand)
+	// if(istype(H.get_equipped_item(slot_back), /obj/item/storage/backpack))
+	// 	if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/storage/box/engineer(H.back), slot_in_backpack)
+	// 	else	H.equip_to_slot_or_del(new /obj/item/storage/box/survival(H.back), slot_in_backpack)
+	// else
+	// 	if (extendedtank)	H.equip_to_slot_or_del(new /obj/item/storage/box/engineer(H), slot_r_hand)
+	// 	else	H.equip_to_slot_or_del(new /obj/item/storage/box/survival(H), slot_r_hand)
+	return
 
 /datum/species/proc/create_organs(mob/living/carbon/human/H) //Handles creation of mob organs.
 

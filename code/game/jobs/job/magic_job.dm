@@ -6,4 +6,4 @@
 	total_positions = 3
 	spawn_positions = 3
 	supervisors = "Глава поселения"
-	outfit_type = /singleton/hierarchy/outfit/job/collector
+	outfit_type = /singleton/hierarchy/outfit/collector

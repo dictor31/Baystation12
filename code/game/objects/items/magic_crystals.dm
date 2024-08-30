@@ -3,8 +3,9 @@
 
 	var/max_charge = 10000
 	var/charge = 5000
+	var/mob/living/carbon/human/owner = "Никто"
 
-	name = "Моё сокровище"
+	name = "Кристалл"
 	icon = 'icons/obj/magic/magic.dmi'
 	icon_state = "normal"
 	throwforce = 0
@@ -13,11 +14,18 @@
 	force = 0
 	overlay_state = "magic_crystal"
 
+/obj/item/clothing/accessory/magic_crystal/New(datum/mind/owner)
+	. = ..()
+	if(istype(owner, /mob/living/carbon/human))
+		src.owner = owner
 
 /obj/item/clothing/accessory/magic_crystal/examine(mob/user, distance)
 	. = ..()
-	if(distance <= 3)
-		examine_charge(user)
+	examine_charge(user)
+	examine_owner(user)
 
 /obj/item/clothing/accessory/magic_crystal/proc/examine_charge(mob/user)
-	to_chat(user, SPAN_NOTICE("У меня осталось [round(charge)] заряда."))
+	to_chat(user, SPAN_NOTICE("В кристалле осталось [round(charge)] заряда."))
+
+/obj/item/clothing/accessory/magic_crystal/proc/examine_owner(mob/user)
+	to_chat(user, SPAN_NOTICE("Этот кристалл верен [owner]"))

@@ -1,4 +1,4 @@
-/mob
+/mob/living/carbon/human
 	var/combat_mode = 0
 	var/crystal = 0
 
@@ -107,20 +107,28 @@
 /mob/living/carbon/human/proc/have_crystal()
 	crystal = 0
 	var/mob/living/carbon/human/H = usr
+	var/obj/item/clothing/accessory/magic_crystal/MC
+
 	for(var/obj/item/I in H.contents)
 		if(istype(I, /obj/item/clothing/accessory/magic_crystal))
-			crystal = I
-			break
+			MC = I
+			if(MC.owner == H)
+				crystal = I
+				break
 		if(istype(I, /obj/item/clothing/under/magic))
 			for(var/obj/item/clothing/accessory/A in I.contents)
 				if(istype(A, /obj/item/clothing/accessory/magic_crystal))
-					crystal = A
-					break
+					MC = A
+					if(MC.owner == H)
+						crystal = A
+						break
 		else
 			for(var/obj/item/storage/I2 in I.contents)
 				if(istype(I2, /obj/item/clothing/accessory/magic_crystal))
-					crystal = I2
-					break
+					MC = I2
+					if(MC.owner == H)
+						crystal = I2
+						break
 
 
 /mob/living/carbon/human/verb/delete_cast_spell_bar()
