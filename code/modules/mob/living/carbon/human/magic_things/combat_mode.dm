@@ -111,6 +111,11 @@
 		if(istype(I, /obj/item/clothing/accessory/magic_crystal))
 			crystal = I
 			break
+		if(istype(I, /obj/item/clothing/under/magic))
+			for(var/obj/item/clothing/accessory/A in I.contents)
+				if(istype(A, /obj/item/clothing/accessory/magic_crystal))
+					crystal = A
+					break
 		else
 			for(var/obj/item/storage/I2 in I.contents)
 				if(istype(I2, /obj/item/clothing/accessory/magic_crystal))

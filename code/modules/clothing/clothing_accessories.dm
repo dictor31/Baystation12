@@ -1,6 +1,8 @@
 /obj/item/clothing/proc/can_attach_accessory(obj/item/clothing/accessory/A, mob/user)
 	if (!length(valid_accessory_slots))
 		if (user)
+			if(istype(A, /obj/item/clothing/accessory/magic_crystal))
+				return FALSE
 			to_chat(user, SPAN_WARNING("\The [src] can't take any attachments."))
 		return FALSE
 
@@ -13,6 +15,9 @@
 		for (var/obj/item/clothing/accessory/AC in accessories)
 			if (AC.slot == A.slot)
 				if (user)
+					if(istype(A, /obj/item/clothing/accessory/magic_crystal))
+						to_chat(user, SPAN_WARNING("Внутри уже есть кристалл"))
+						return FALSE
 					to_chat(user, SPAN_WARNING("\The [src] can't attach more accessories of that type."))
 				return FALSE
 

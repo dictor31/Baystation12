@@ -4,7 +4,7 @@
 /mob/proc/get_knowledge_spells()
 	var/mob/living/carbon/human/H = usr
 	var/assigned_mob = H.mind.assigned_role
-	if(assigned_mob == "Chief Steward")
+	if(assigned_mob == "Высший сборщик")
 		H.mind?.learned_spells = list(new /spell/targeted/projectile/dumbfire/fireball, new /spell/aoe_turf/blink, new /spell/targeted/equip_item/burning_hand,
 		new /spell/targeted/projectile/dumbfire/passage)
 
