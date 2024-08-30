@@ -280,11 +280,10 @@
 		GLOB.global_announcer.autosay("A new[rank ? " [rank]" : " visitor" ] [join_message ? join_message : "has arrived"].", "Arrivals Announcement Computer")
 
 /mob/new_player/proc/LateChoices()
-	var/name = client.prefs.real_name
 
 	var/list/header = list("<html><body><center>")
-	header += "<b>Welcome, [name].<br></b>"
-	header += "Round Duration: [roundduration2text()]<br>"
+	header += "<b>Выбери своё будущее<br></b>"
+	header += "Прошло времени: [roundduration2text()]<br>"
 
 	if(evacuation_controller.has_evacuated())
 		header += "[SPAN_COLOR("red", "<b>\The [station_name()] has been evacuated.</b>")]<br>"
@@ -295,20 +294,20 @@
 			header += "[SPAN_COLOR("red", "\The [station_name()] is currently undergoing crew transfer procedures.")]<br>"
 
 	var/list/dat = list()
-	dat += "Choose from the following open/valid positions:<br>"
-	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Hide":"Show"] unavailable jobs.</a><br>"
+	dat += "Выбери своё предназначение:<br>"
+//	dat += "<a href='byond://?src=\ref[src];invalid_jobs=1'>[show_invalid_jobs ? "Hide":"Show"] unavailable jobs.</a><br>"
 	dat += "<table>"
-	dat += "<tr><td align = 'center' colspan = 3><b>[GLOB.using_map.station_name]:</b></td></tr>"
+//	dat += "<tr><td align = 'center' colspan = 3><b>[GLOB.using_map.station_name]:</b></td></tr>"
 
 	var/list/categorizedJobs = list(
-		"Command" =         list(jobs = list(), dep = COM, color = "#aac1ee"),
+		"Власть" =          list(jobs = list(), dep = COM, color = "#aac1ee"),
 		"Command Support" = list(jobs = list(), dep = SPT, color = "#aac1ee"),
-		"Neutral" =         list(jobs = list(), dep = NEU, color = "#ffd699"),
+		"Нейтралы" =        list(jobs = list(), dep = NEU, color = "#ffd699"),
 		"Security" =        list(jobs = list(), dep = SEC, color = "#ff9999"),
-		"Miscellaneous" =   list(jobs = list(), dep = CIV, color = "#ffffff", colBreak = 1),
+//		"Miscellaneous" =   list(jobs = list(), dep = CIV, color = "#ffffff", colBreak = 1),
 		"Synthetics" =      list(jobs = list(), dep = MSC, color = "#ccffcc"),
 		"Service" =         list(jobs = list(), dep = SRV, color = "#cccccc"),
-		"Medical" =         list(jobs = list(), dep = MED, color = "#99ffe6"),
+		"Целители" =        list(jobs = list(), dep = MED, color = "#99ffe6"),
 		"Research" =        list(jobs = list(), dep = SCI, color = "#e6b3e6", colBreak = 1),
 		"Supply" =          list(jobs = list(), dep = SUP, color = "#ead4ae"),
 		"Exploration" =     list(jobs = list(), dep = EXP, color = "#ffd699"),
@@ -428,7 +427,7 @@
 		additional_dat += "<br>"
 		dat = additional_dat + dat
 	dat = header + dat
-	var/datum/browser/popup = new(src, "latechoices", "Choose Profession", 950, 900)
+	var/datum/browser/popup = new(src, "latechoices", "", 950, 900)
 	popup.set_content(jointext(dat, null))
 	popup.open(0) // 0 is passed to open so that it doesn't use the onclose() proc
 

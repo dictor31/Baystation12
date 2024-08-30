@@ -58,3 +58,21 @@
 	desc = "От него веет магической энергией"
 	icon_state = "h_medic_suit"
 	item_state = "h_medic_suit"
+
+//Власть
+/obj/item/clothing/under/magic/rich
+	name = "Наряд владыки"
+	desc = "В нём чувствуется власть..."
+	icon_state = "hot_under"
+	worn_state = "hot_under"
+
+/obj/item/clothing/suit/magic/hot
+	name = "Мантия владыки"
+	desc = "Без такой и в гроб ложиться стыдно"
+	icon_state = "hot_suit"
+	item_state = "hot_suit"
+
+/obj/item/clothing/shoes/magic/rich
+	name = "Дорогие ботинки"
+	desc = "Только знатные волшебники могут позволить себе такие"
+	icon_state = "laceups"

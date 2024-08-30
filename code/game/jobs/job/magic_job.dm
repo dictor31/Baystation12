@@ -1,6 +1,6 @@
 /datum/job/collector
 	title = "Высший сборщик"
-	department = "Neutral"
+	department = "Нейтралы"
 	department_flag = NEU
 
 	total_positions = 3
@@ -10,7 +10,7 @@
 
 /datum/job/junior_medic
 	title = "Ученик целителя"
-	department = "Medical"
+	department = "Медики"
 	department_flag = MED
 
 	total_positions = 2
@@ -18,14 +18,22 @@
 	supervisors = "Целитель"
 	outfit_type = /singleton/hierarchy/outfit/medic
 
-
-
 /datum/job/head_medic
 	title = "Целитель"
-	department = "Medical"
+	department = "Медики"
 	department_flag = MED
 
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "Глава поселения"
 	outfit_type = /singleton/hierarchy/outfit/medic/head
+
+/datum/job/hot
+	title = "Повелитель"
+	department = "Власть"
+	department_flag = COM
+
+	total_positions = 1
+	spawn_positions = 1
+	supervisors = "Только Боги могут тобой командовать"
+	outfit_type = /singleton/hierarchy/outfit/hot

@@ -38,7 +38,7 @@ var/global/list/outfits_singletons_by_type_
 	var/r_pocket = null
 	var/suit_store = null
 	var/r_hand = null
-	var/l_hand = null
+	var/l_hand = /obj/item/clothing/accessory/magic_crystal
 	var/holster = null
 	var/list/backpack_contents = list() // In the list(path=count,otherpath=count) format
 
