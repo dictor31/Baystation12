@@ -1,29 +1,34 @@
-"a" = (/turf/simulated/wall,/area/space)
-"b" = (/turf/simulated/floor/fixed,/area/holodeck)
-"c" = (/obj/item/clothing/accessory/magic_crystal,/turf/simulated/floor/fixed,/area/holodeck)
-"d" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor/fixed,/area/holodeck)
-"e" = (/mob/living/carbon/human,/turf/simulated/floor/fixed,/area/holodeck)
-"f" = (/mob/living/simple_animal/collector,/turf/simulated/floor/fixed,/area/holodeck)
+"a" = (/turf/simulated/wall,/area/hallway)
+"b" = (/turf/simulated/floor,/area/hallway)
+"c" = (/obj/machinery/light,/turf/simulated/floor,/area/hallway)
+"d" = (/obj/item/device/flashlight/lamp,/turf/simulated/floor,/area/hallway)
+"e" = (/obj/item/device/assembly_holder,/obj/item/device/assembly_holder,/turf/simulated/floor,/area/hallway)
+"f" = (/obj/machinery/light_construct,/obj/machinery/light_construct,/turf/simulated/floor,/area/hallway)
+"g" = (/mob/living/carbon/human,/turf/simulated/floor,/area/hallway)
+"h" = (/obj/machinery/power/apc,/turf/simulated/wall,/area/hallway)
+"i" = (/mob/living/simple_animal/collector,/turf/simulated/floor,/area/hallway)
+"j" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor,/area/hallway)
+"k" = (/obj/item/clothing/accessory/magic_crystal,/turf/simulated/floor,/area/hallway)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaa
+abbbbbbcbbbbcbbbbba
+abbbbbbbbbbbbbbbbba
+acbbbbbbbbbbbbbbbca
 abbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbba
+acbbbbbbbbbbbbbbbca
 abbbbbbbbbbbbbbbbba
+abbbbdbbbbbbdbbbbba
 abbbbbbbbbbbbbbbbba
+acbbbbbbbbbbbbbbbca
 abbbbbbbbbbbbbbbbba
+hbbbbbbbbbbbbbbbbba
+aebbbbbbbbbbbbbbbba
+acbbbdbbbbbbdbbbbba
+afbbbbbbbbbbbbbbbca
+abbbbgbgbibbbbbbbba
 abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbebebfbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbdbbbbcbbbbbbbba
+acbbjbcbbkcbbbcbbba
 aaaaaaaaaaaaaaaaaaa
 "}

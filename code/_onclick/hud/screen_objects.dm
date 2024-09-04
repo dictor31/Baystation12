@@ -189,6 +189,9 @@
 /obj/screen/Click(location, control, params)
 	if(!usr)	return 1
 	switch(name)
+		if("Радость")
+			usr.show_happy()
+
 		if("toggle")
 			if(usr.hud_used.inventory_shown)
 				usr.hud_used.inventory_shown = 0
@@ -294,7 +297,7 @@
 			usr.a_intent_change("right")
 
 		if("pull")
-			usr.stop_pulling()
+			usr.show_happy()
 		if("throw")
 			if(!usr.stat && isturf(usr.loc) && !usr.restrained())
 				usr:toggle_throw_mode()

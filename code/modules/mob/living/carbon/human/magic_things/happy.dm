@@ -3,9 +3,10 @@
 	var/happy = 3000
 
 
-/mob/living/carbon/human/verb/show_happy()
+/mob/verb/show_happy()
 	set name = "Показать радость"
 	set category = "IC"
+	set hidden = 1
 
 	var/mob/living/carbon/human/H = usr
 	to_chat(H, "У меня [H.happy] радости")

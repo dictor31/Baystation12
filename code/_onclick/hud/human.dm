@@ -179,6 +179,14 @@
 		mymob.internals.screen_loc = ui_internal
 		hud_elements |= mymob.internals
 
+	if(hud_data.has_happy)
+		mymob.state_happy = new /obj/screen()
+		mymob.state_happy.icon = ui_style
+		mymob.state_happy.icon_state = "template"
+		mymob.state_happy.SetName("Радость")
+		mymob.state_happy.screen_loc = ui_happy
+		hud_elements |= mymob.state_happy
+
 	if(hud_data.has_warnings)
 		mymob.healths = new /obj/screen()
 		mymob.healths.icon = ui_style
@@ -247,6 +255,7 @@
 		mymob.hydration_icon.SetName("hydration")
 		mymob.hydration_icon.screen_loc = ui_nutrition_small
 		hud_elements |= mymob.hydration_icon
+
 
 	mymob.pain = new /obj/screen/fullscreen/pain( null )
 	hud_elements |= mymob.pain

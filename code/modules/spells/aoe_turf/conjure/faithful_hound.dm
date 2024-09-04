@@ -4,7 +4,7 @@
 	feedback = "FH"
 
 	charge_max = 600
-	spell_flags = NEEDSCLOTHES
+	spell_flags = 0 //NEEDSCLOTHES
 	invocation = "Du korilath tangus"
 	invocation_type = SpI_WHISPER
 	range = 0
