@@ -1,5 +1,4 @@
 /spell/aoe_turf/smoke
-	desc = "This spell spawns a cloud of choking smoke at your location and does not require wizard garb."
 	feedback = "SM"
 	school = "transmutation"
 	charge_max = 120

@@ -1,5 +1,4 @@
 /spell/targeted/projectile/dumbfire/fireball
-	desc = "This spell fires a fireball at a target and does not require wizard garb."
 	feedback = "FB"
 	proj_type = /obj/item/projectile/spell_projectile/fireball
 

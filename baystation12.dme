@@ -2241,6 +2241,7 @@
 #include "code\modules\mob\living\carbon\human\magic_things\combat_mode.dm"
 #include "code\modules\mob\living\carbon\human\magic_things\happy.dm"
 #include "code\modules\mob\living\carbon\human\magic_things\lists_spells.dm"
+#include "code\modules\mob\living\carbon\human\magic_things\orb.dm"
 #include "code\modules\mob\living\carbon\xenobiological\death.dm"
 #include "code\modules\mob\living\carbon\xenobiological\examine.dm"
 #include "code\modules\mob\living\carbon\xenobiological\hud.dm"

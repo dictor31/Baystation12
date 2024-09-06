@@ -1,7 +1,4 @@
 /spell/targeted/ethereal_jaunt/shift
-	name = "Phase Shift"
-	desc = "This spell allows you to pass through walls."
-
 	charge_max = 20 SECONDS
 	spell_flags = Z2NOCAST | INCLUDEUSER | CONSTRUCT_CHECK
 	invocation_type = SpI_NONE

@@ -33,8 +33,9 @@
 		return
 
 	while(do_after(H, 0.5 SECONDS) && can_steal_happy(T))
-		H.happy += 10
-		T.happy -= 10
+		var/how_much = rand(1, 10)
+		H.happy += how_much
+		T.happy -= how_much
 
 
 /mob/living/carbon/human/proc/can_steal_happy(mob/living/carbon/human/target)
@@ -44,7 +45,7 @@
 		to_chat(src, SPAN_WARNING("У меня нет цели"))
 		return FALSE
 
-	if(target.happy < 5)
+	if(target.happy < 10)
 		to_chat(src, SPAN_WARNING("Эта цель потеряла надежду"))
 		return FALSE
 
