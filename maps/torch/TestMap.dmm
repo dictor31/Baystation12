@@ -1,7 +1,7 @@
 "a" = (/turf/simulated/wall,/area/hallway)
 "b" = (/turf/simulated/floor,/area/hallway)
 "c" = (/obj/machinery/light,/turf/simulated/floor,/area/hallway)
-"d" = (/obj/item/device/flashlight/lamp,/turf/simulated/floor,/area/hallway)
+"d" = (/obj/item/device/flashlight/lamp,/turf/simulated/floor,/area/town)
 "e" = (/obj/item/device/assembly_holder,/obj/item/device/assembly_holder,/turf/simulated/floor,/area/hallway)
 "f" = (/obj/machinery/light_construct,/obj/machinery/light_construct,/turf/simulated/floor,/area/hallway)
 "g" = (/mob/living/carbon/human,/turf/simulated/floor,/area/hallway)
@@ -9,6 +9,7 @@
 "i" = (/mob/living/simple_animal/collector,/turf/simulated/floor,/area/hallway)
 "j" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor,/area/hallway)
 "k" = (/obj/item/clothing/accessory/magic_crystal,/turf/simulated/floor,/area/hallway)
+"S" = (/turf/simulated/floor,/area/town)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaa
@@ -19,13 +20,13 @@ abbbbbbbbbbbbbbbbba
 abbbbbbbbbbbbbbbbba
 acbbbbbbbbbbbbbbbca
 abbbbbbbbbbbbbbbbba
-abbbbdbbbbbbdbbbbba
-abbbbbbbbbbbbbbbbba
-acbbbbbbbbbbbbbbbca
-abbbbbbbbbbbbbbbbba
-hbbbbbbbbbbbbbbbbba
-aebbbbbbbbbbbbbbbba
-acbbbdbbbbbbdbbbbba
+abbbbdSSSSSSdbbbbba
+abbbbSSSSSSSSbbbbba
+acbbbSSSSSSSSbbbbca
+abbbbSSSSSSSSbbbbba
+hbbbbSSSSSSSSbbbbba
+aebbbSSSSSSSSbbbbba
+acbbbdSSSSSSdbbbbba
 afbbbbbbbbbbbbbbbca
 abbbbgbgbibbbbbbbba
 abbbbbbbbbbbbbbbbba

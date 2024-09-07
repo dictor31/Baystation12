@@ -1,6 +1,6 @@
 /mob/living/carbon/human
 	var/combat_mode = 0
-	var/crystal = 0
+	var/crystal
 
 /mob/living/carbon/human/verb/combat_mode()
 	set name = "Боевой режим"
@@ -77,15 +77,17 @@
 			if(MC.owner == H)
 				crystal = I
 				break
-		if(istype(I, /obj/item/clothing/under/magic))
+
+		else if(istype(I, /obj/item/clothing/under/magic))
 			for(var/obj/item/clothing/accessory/A in I.contents)
 				if(istype(A, /obj/item/clothing/accessory/magic_crystal))
 					MC = A
 					if(MC.owner == H)
 						crystal = A
 						break
-		else
-			for(var/obj/item/storage/I2 in I.contents)
+
+		else if(istype(I, /obj/item/storage))
+			for(var/obj/item/I2 in I.contents)
 				if(istype(I2, /obj/item/clothing/accessory/magic_crystal))
 					MC = I2
 					if(MC.owner == H)
