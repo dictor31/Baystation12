@@ -8,7 +8,7 @@
 	desc = "То, что даёт нам энергию"
 
 /obj/machinery/power/smes/orb/Initialize()
-	. = ..()
+	..()
 	addtimer(new Callback(src, .proc/blackout), 10 SECONDS, TIMER_LOOP)
 
 /obj/machinery/power/smes/orb/proc/blackout()
