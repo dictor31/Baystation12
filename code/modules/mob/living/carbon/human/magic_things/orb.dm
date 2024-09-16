@@ -6,6 +6,7 @@
 /obj/machinery/power/smes/orb
 	name = "Ядро"
 	desc = "То, что даёт нам энергию"
+	interact_offline = TRUE
 
 /obj/machinery/power/smes/orb/Initialize()
 	..()
