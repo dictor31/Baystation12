@@ -7,8 +7,7 @@
 	switch(assigned_mob)
 		if("Высший сборщик")
 			H.mind?.learned_spells = list(
-			new /spell/targeted/projectile/dumbfire/fireball,
-			new /spell/targeted/genetic/blind
+			new /spell/targeted/projectile/dumbfire/stuncuff
 			)
 
 
@@ -64,3 +63,8 @@
 	name = "Ослепление"
 	desc = "Это заклинание ослепит всех, кто видит твоё величие"
 	cast_combo = list(I_GRAB, I_GRAB, I_GRAB)
+
+/spell/targeted/projectile/dumbfire/stuncuff
+	name = "Связывание"
+	desc = "Заклинание даёт возможность задержать преступника"
+	cast_combo = list(I_GRAB)

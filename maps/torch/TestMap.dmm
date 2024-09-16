@@ -2,14 +2,23 @@
 "b" = (/turf/simulated/floor,/area/hallway)
 "c" = (/obj/machinery/light,/turf/simulated/floor,/area/hallway)
 "d" = (/obj/item/device/flashlight/lamp,/turf/simulated/floor,/area/town)
-"e" = (/obj/item/device/assembly_holder,/obj/item/device/assembly_holder,/turf/simulated/floor,/area/hallway)
+"e" = (/obj/structure/cable,/obj/structure/cable{dir = 1},/turf/simulated/floor,/area/hallway)
 "f" = (/obj/machinery/light_construct,/obj/machinery/light_construct,/turf/simulated/floor,/area/hallway)
 "g" = (/mob/living/carbon/human,/turf/simulated/floor,/area/hallway)
 "h" = (/obj/machinery/power/apc,/turf/simulated/wall,/area/hallway)
 "i" = (/mob/living/simple_animal/collector,/turf/simulated/floor,/area/hallway)
 "j" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor,/area/hallway)
 "k" = (/obj/item/clothing/accessory/magic_crystal,/turf/simulated/floor,/area/hallway)
+"m" = (/obj/structure/cable{dir = 8},/obj/structure/cable{dir = 4},/turf/simulated/floor,/area/hallway)
+"r" = (/obj/structure/cable{dir = 8},/obj/structure/cable{dir = 4},/turf/simulated/floor,/area/town)
+"s" = (/obj/machinery/power/terminal{dir = 8},/obj/structure/cable{dir = 1},/turf/simulated/floor,/area/hallway)
+"A" = (/obj/machinery/light,/obj/structure/cable{dir = 8},/obj/structure/cable,/turf/simulated/floor,/area/hallway)
+"B" = (/obj/machinery/orb_charger,/turf/simulated/floor,/area/town)
+"N" = (/obj/item/device/flashlight/lamp,/obj/structure/cable{dir = 8},/obj/structure/cable{dir = 4},/turf/simulated/floor,/area/town)
+"O" = (/obj/machinery/power/terminal{dir = 1},/obj/structure/cable{dir = 4},/turf/simulated/floor,/area/town)
+"Q" = (/obj/machinery/light,/turf/simulated/floor,/area/town)
 "S" = (/turf/simulated/floor,/area/town)
+"Z" = (/obj/machinery/power/smes/orb,/turf/simulated/floor,/area/town)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaa
@@ -17,17 +26,17 @@ abbbbbbcbbbbcbbbbba
 abbbbbbbbbbbbbbbbba
 acbbbbbbbbbbbbbbbca
 abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-acbbbbbbbbbbbbbbbca
-abbbbbbbbbbbbbbbbba
-abbbbdSSSSSSdbbbbba
-abbbbSSSSSSSSbbbbba
-acbbbSSSSSSSSbbbbca
-abbbbSSSSSSSSbbbbba
-hbbbbSSSSSSSSbbbbba
-aebbbSSSSSSSSbbbbba
-acbbbdSSSSSSdbbbbba
-afbbbbbbbbbbbbbbbca
+abbSSSSSSSSSSSSbbba
+acbSSSSSSSSSSSSbbca
+abbSSSSSSSSSSSSbbba
+abbSSdSSSSSSdSSbbba
+abbSSSSSSSSSSSSbbba
+acbSSSQSSSQSSSSbbca
+abbSSSSSSSSSSSSbbba
+hsbSSSSSSSSSSSSbbba
+aebSSSSSBSZSSSSbbba
+aAmrrNrrrrOSdSSbbba
+afbSSSSSSSSSSSSbbca
 abbbbgbgbibbbbbbbba
 abbbbbbbbbbbbbbbbba
 acbbjbcbbkcbbbcbbba

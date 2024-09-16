@@ -3,8 +3,8 @@
 
 	var/max_charge = 10000
 	var/charge = 5000
-	var/mob/living/carbon/human/owner = "Неизвестно"
 	var/inside_town = FALSE
+	var/mob/living/carbon/human/owner = "Неизвестно"
 
 	name = "Кристалл"
 	desc = "Странный камень, который дал нам всем веру в светлое будущее"
@@ -17,7 +17,7 @@
 
 /obj/item/clothing/accessory/magic_crystal/New(datum/mind/owner)
 	. = ..()
-	addtimer(new Callback(src, .proc/charge_crystal), 15 SECONDS, TIMER_LOOP)
+	addtimer(new Callback(src, .proc/charge_crystal), 5 SECONDS, TIMER_LOOP)
 	if(istype(owner, /mob/living/carbon/human))
 		src.owner = owner
 
@@ -25,25 +25,30 @@
 	. = ..()
 	examine_crystal(user)
 
-/obj/item/clothing/accessory/magic_crystal/proc/examine_crystal(mob/user)
+/obj/item/clothing/accessory/magic_crystal/proc/examine_crystal(mob/user, area/locate)
+	locate = get_area(src)
+
 	to_chat(user, SPAN_NOTICE("В кристалле осталось [round(charge)] заряда."))
 	to_chat(user, SPAN_NOTICE("Этот кристалл принадлежит [owner]"))
-	if(inside_town)
-		to_chat(user, SPAN_NOTICE("Кристалл пульсирует"))
-	else
-		to_chat(user, SPAN_NOTICE("Кристалл затухает"))
+
+	if(locate.type == /area/town)
+		var/area/town/T = locate
+		if(T.have_magic && inside_town)
+			to_chat(user, SPAN_NOTICE("Кристалл пульсирует"))
+			return
+	to_chat(user, SPAN_NOTICE("Кристалл затухает"))
+
 
 /obj/item/clothing/accessory/magic_crystal/proc/charge_crystal(obj/item/clothing/accessory/magic_crystal = src)
 	var/obj/item/clothing/accessory/magic_crystal/MC = magic_crystal
+	var/area/location = get_area(src)
 
-	if(charge >= max_charge || charge <= 0)
-		return
+	if(location.type == /area/town)
+		var/area/town/T = location
+		if(T.have_magic)
+			MC.inside_town = TRUE
+			MC.charge += rand(5, 10)
+			return
 
-	if(!inside_town && charge > 0)
-		while(!inside_town && charge > 0)
-			sleep(50)
-			MC.charge -= rand(1, 10)
-
-	while(inside_town && charge < max_charge)
-		sleep(50)
-		MC.charge += rand(1, 10)
+	MC.inside_town = FALSE
+	MC.charge -= rand(5, 10)

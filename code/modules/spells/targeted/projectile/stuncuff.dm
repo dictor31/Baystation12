@@ -1,12 +1,9 @@
 /spell/targeted/projectile/dumbfire/stuncuff
-	name = "Stun Cuff"
-	desc = "This spell fires out a small curse that stuns and cuffs the target."
 	feedback = "SC"
 	proj_type = /obj/item/projectile/spell_projectile/stuncuff
 
-	charge_type = Sp_CHARGES
+	charge_type = Sp_RECHARGE
 	charge_max = 6
-	charge_counter = 6
 	spell_flags = 0
 	invocation = "Fu'Reai Diakan!"
 	invocation_type = SpI_SHOUT

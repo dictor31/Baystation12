@@ -18,7 +18,7 @@
 		to_chat(H, "Я выдохся")
 	else
 		H.combat_mode = 1
-		to_chat(H, "Я готов трахать")
+		to_chat(H, "Я готов")
 
 /mob/verb/cast_plus_intent()
 	set category = "IC"
