@@ -297,7 +297,7 @@
 			usr.a_intent_change("right")
 
 		if("pull")
-			//Вернуть пулл
+			usr.stop_pulling()
 		if("throw")
 			if(!usr.stat && isturf(usr.loc) && !usr.restrained())
 				usr:toggle_throw_mode()

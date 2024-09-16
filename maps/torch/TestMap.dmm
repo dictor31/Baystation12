@@ -10,16 +10,18 @@
 "j" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor,/area/hallway)
 "k" = (/obj/item/clothing/accessory/magic_crystal,/turf/simulated/floor,/area/hallway)
 "m" = (/obj/item/device/multitool,/turf/simulated/floor,/area/town)
-"r" = (/obj/machinery/power/smes/buildable/preset/on_full,/turf/simulated/floor,/area/town)
-"s" = (/obj/machinery/power/apc{dir = 8; pixel_x = -24},/turf/simulated/floor,/area/hallway)
-"A" = (/obj/machinery/power/smes/buildable,/turf/simulated/floor,/area/town)
+"r" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor,/area/hallway)
+"s" = (/obj/machinery/power/apc{dir = 8; pixel_x = -24},/obj/structure/cable/cyan{d2 = 2; icon_state = "0-2"},/turf/simulated/floor,/area/hallway)
+"A" = (/obj/machinery/power/terminal{dir = 8},/turf/simulated/floor,/area/town)
 "B" = (/obj/machinery/orb_charger,/turf/simulated/floor,/area/town)
-"K" = (/obj/machinery/power/smes/buildable/preset/torch,/turf/simulated/floor,/area/town)
-"N" = (/obj/item/device/flashlight/lamp{on = 1},/turf/simulated/floor,/area/town)
-"O" = (/obj/machinery/power/terminal{dir = 1},/obj/structure/cable{dir = 4},/turf/simulated/floor,/area/town)
+"G" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/hallway)
+"K" = (/obj/machinery/light,/obj/structure/cable/cyan{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor,/area/hallway)
+"L" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/town)
+"N" = (/obj/item/device/flashlight/lamp{on = 1},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/town)
+"O" = (/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor,/area/town)
 "Q" = (/obj/machinery/light,/turf/simulated/floor,/area/town)
 "S" = (/turf/simulated/floor,/area/town)
-"Z" = (/obj/machinery/power/smes/orb,/turf/simulated/floor,/area/town)
+"Z" = (/obj/machinery/power/smes/orb,/obj/structure/cable/cyan{d2 = 2; icon_state = "0-2"},/turf/simulated/floor,/area/town)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaa
@@ -34,9 +36,9 @@ abbSSdSSSSSSdSSbbba
 abbSSSSSSSSSSSSbbba
 acbSSSQSSSQSSSSbbca
 abehhhhmSSSSSSSbbba
-asbrSASKSSSSSSSbbba
-abbSSSSSBSZSSSSbbba
-acbSSNSSSSOSdSSbbba
+asbSSSSSSSSSSSSbbba
+arbSSSSSBSZASSSbbba
+aKGLLNLLLLOSdSSbbba
 afbSSSSSSSSSSSSbbca
 abbbbgbgbibbbbbbbba
 abbbbbbbbbbbbbbbbba

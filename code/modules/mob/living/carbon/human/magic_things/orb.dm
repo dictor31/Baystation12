@@ -7,6 +7,8 @@
 	name = "Ядро"
 	desc = "То, что даёт нам энергию"
 	interact_offline = TRUE
+	output_attempt = 1
+	outputting = 1
 
 /obj/machinery/power/smes/orb/Initialize()
 	..()
@@ -35,7 +37,7 @@
 	if(user.happy <= 10)
 		to_chat(user, "Мне не хватает для зарядки")
 		return
-	if(user.mind?.assigned_job != "Высший сборщик")
+	if(user.mind?.assigned_role != "Высший сборщик")
 		to_chat(user, "Я не знаю, что с этим делать")
 		return
 	if(O.charge >= O.capacity)
