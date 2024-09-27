@@ -8,11 +8,11 @@
 	desc = "То, что даёт нам энергию"
 	interact_offline = TRUE
 	output_attempt = 1
-	outputting = 1
+	outputting = 2
 
 /obj/machinery/power/smes/orb/Initialize()
 	..()
-	addtimer(new Callback(src, .proc/blackout), 10 SECONDS, TIMER_LOOP)
+	addtimer(new Callback(src, .proc/blackout), 5 SECONDS, TIMER_LOOP)
 
 /obj/machinery/power/smes/orb/proc/blackout()
 	var/area/town/T = get_area(src)
@@ -23,38 +23,21 @@
 
 
 /obj/machinery/power/smes/orb/Process()
-	if(failure_timer)	// Disabled by gridcheck.
+	if(failure_timer)
 		failure_timer--
 		return
 
-	// only update icon if state changed
 	if(last_disp != chargedisplay() || last_chrg != inputting || last_onln != outputting)
 		update_icon()
 
-	//store machine state to see if we need to update the icon overlays
 	last_disp = chargedisplay()
-	last_chrg = inputting
 	last_onln = outputting
 
-	input_available = 0
-	//inputting
-	if(input_attempt && (!input_pulsed && !input_cut))
-		target_load = min((capacity-charge)/CELLRATE, input_level)	// Amount we will request from the powernet.
-		var/is_input_available = FALSE
-		for(var/obj/item/stock_parts/power/terminal/term in power_components)
-			if(!term.terminal || !term.terminal.powernet)
-				continue
-			is_input_available = TRUE
-			term.terminal.powernet.smes_demand += target_load
-			term.terminal.powernet.inputting.Add(src)
-		if(!is_input_available)
-			target_load = 0 // We won't input any power without powernet connection.
-		inputting = 0
-
 	output_used = 0
+
 	//outputting
 	if(output_attempt && (!output_pulsed && !output_cut) && powernet && charge)
-		output_used = min( charge/CELLRATE, output_level)		//limit output to that stored
+		output_used = min(charge/CELLRATE, output_level)		//limit output to that stored
 		remove_charge(output_used)			// reduce the storage (may be recovered in /restore() if excessive)
 		add_avail(output_used)				// add output to powernet (smes side)
 		outputting = 2
@@ -86,5 +69,5 @@
 		return
 
 	while(do_after(user, 0.5 SECONDS) && user.happy > 10 && O.charge < O.capacity)
-		O.charge += 10
+		O.charge += 20
 		user.happy -= 10
