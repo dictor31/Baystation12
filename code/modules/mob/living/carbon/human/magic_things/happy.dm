@@ -3,9 +3,10 @@
 	var/happy = 3000
 
 
-/mob/living/carbon/human/verb/show_happy()
+/mob/verb/show_happy()
 	set name = "Показать радость"
 	set category = "IC"
+	set hidden = 1
 
 	var/mob/living/carbon/human/H = usr
 	to_chat(H, "У меня [H.happy] радости")
@@ -32,8 +33,9 @@
 		return
 
 	while(do_after(H, 0.5 SECONDS) && can_steal_happy(T))
-		H.happy += 10
-		T.happy -= 10
+		var/how_much = rand(1, 10)
+		H.happy += how_much
+		T.happy -= how_much
 
 
 /mob/living/carbon/human/proc/can_steal_happy(mob/living/carbon/human/target)
@@ -43,7 +45,7 @@
 		to_chat(src, SPAN_WARNING("У меня нет цели"))
 		return FALSE
 
-	if(target.happy < 5)
+	if(target.happy < 10)
 		to_chat(src, SPAN_WARNING("Эта цель потеряла надежду"))
 		return FALSE
 

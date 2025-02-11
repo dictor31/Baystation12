@@ -189,6 +189,9 @@
 /obj/screen/Click(location, control, params)
 	if(!usr)	return 1
 	switch(name)
+		if("Радость")
+			usr.show_happy()
+
 		if("toggle")
 			if(usr.hud_used.inventory_shown)
 				usr.hud_used.inventory_shown = 0

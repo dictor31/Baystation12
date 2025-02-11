@@ -1,29 +1,46 @@
-"a" = (/turf/simulated/wall,/area/space)
-"b" = (/turf/simulated/floor/fixed,/area/holodeck)
-"c" = (/obj/item/clothing/accessory/magic_crystal,/turf/simulated/floor/fixed,/area/holodeck)
-"d" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor/fixed,/area/holodeck)
-"e" = (/mob/living/carbon/human,/turf/simulated/floor/fixed,/area/holodeck)
-"f" = (/mob/living/simple_animal/collector,/turf/simulated/floor/fixed,/area/holodeck)
+"a" = (/turf/simulated/wall,/area/hallway)
+"b" = (/turf/simulated/floor,/area/hallway)
+"c" = (/obj/machinery/light,/turf/simulated/floor,/area/hallway)
+"d" = (/obj/item/device/flashlight/lamp,/turf/simulated/floor,/area/town)
+"e" = (/obj/item/wirecutters,/turf/simulated/floor,/area/hallway)
+"f" = (/obj/machinery/light_construct,/obj/machinery/light_construct,/turf/simulated/floor,/area/hallway)
+"g" = (/mob/living/carbon/human,/turf/simulated/floor,/area/hallway)
+"h" = (/obj/item/stack/cable_coil,/turf/simulated/floor,/area/town)
+"i" = (/mob/living/simple_animal/collector,/turf/simulated/floor,/area/hallway)
+"j" = (/obj/landmark{name = "JoinLateCryo"},/turf/simulated/floor,/area/hallway)
+"k" = (/obj/item/clothing/accessory/magic_crystal,/turf/simulated/floor,/area/hallway)
+"m" = (/obj/item/device/multitool,/turf/simulated/floor,/area/town)
+"r" = (/obj/structure/cable/cyan{d1 = 1; d2 = 2; icon_state = "1-2"},/turf/simulated/floor,/area/hallway)
+"s" = (/obj/machinery/power/apc{dir = 8; pixel_x = -24},/obj/structure/cable/cyan{d2 = 2; icon_state = "0-2"},/turf/simulated/floor,/area/hallway)
+"u" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/town)
+"A" = (/obj/machinery/light,/obj/structure/cable/cyan{d1 = 1; d2 = 4; icon_state = "1-4"},/turf/simulated/floor,/area/hallway)
+"B" = (/obj/machinery/orb_charger,/turf/simulated/floor,/area/town)
+"K" = (/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/hallway)
+"N" = (/obj/item/device/flashlight/lamp{on = 1},/obj/structure/cable/cyan{d1 = 4; d2 = 8; icon_state = "4-8"},/turf/simulated/floor,/area/town)
+"O" = (/obj/structure/cable/cyan{d1 = 1; d2 = 8; icon_state = "1-8"},/turf/simulated/floor,/area/town)
+"Q" = (/obj/machinery/light,/turf/simulated/floor,/area/town)
+"S" = (/turf/simulated/floor,/area/town)
+"Z" = (/obj/machinery/power/smes/orb,/obj/structure/cable/cyan{d2 = 2; icon_state = "0-2"},/turf/simulated/floor,/area/town)
 
 (1,1,1) = {"
 aaaaaaaaaaaaaaaaaaa
+abbbbbbcbbbbcbbbbba
 abbbbbbbbbbbbbbbbba
+acbbbbbbbbbbbbbbbca
 abbbbbbbbbbbbbbbbba
+abbSSSSSSSSSSSSbbba
+acbSSSSSSSSSSSSbbca
+abbSSSSSSSSSSSSbbba
+abbSSdSSSSSSdSSbbba
+abbSSSSSSSSSSSSbbba
+acbSSSQSSSQSSSSbbca
+abehhhhmSSSSSSSbbba
+asbSSSSSSSSSSSSbbba
+arbSSSSSBSZSSSSbbba
+aAKuuNuuuuOSdSSbbba
+afbSSSSSSSSSSSSbbca
+abbbbgbgbibbbbbbbba
 abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbbebebfbbbbbbbba
-abbbbbbbbbbbbbbbbba
-abbbdbbbbcbbbbbbbba
+acbbjbcbbkcbbbcbbba
 aaaaaaaaaaaaaaaaaaa
 "}

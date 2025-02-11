@@ -1,6 +1,4 @@
 /spell/aoe_turf/blink
-	name = "Blink"
-	desc = "This spell randomly teleports you a short distance."
 	feedback = "BL"
 	school = "conjuration"
 	charge_max = 20

@@ -1,6 +1,4 @@
 /spell/invisibility
-	name = "invisibility"
-	desc = "A simple spell of invisibility, for when you really just can't afford a paper bag."
 	feedback = "IV"
 	spell_flags = 0
 	charge_max = 100

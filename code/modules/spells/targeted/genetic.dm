@@ -22,8 +22,6 @@
 	return
 
 /spell/targeted/genetic/blind
-	name = "Blind"
-	desc = "This spell inflicts a target with temporary blindness. Does not require wizard garb."
 	feedback = "BD"
 	disabilities = 1
 	school = "illusion"

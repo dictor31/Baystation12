@@ -132,3 +132,5 @@
 #define ui_pai_light "NORTH,WEST+3:6"
 #define ui_pai_rest "NORTH,WEST+4:6"
 
+//magic
+#define ui_happy "EAST-1:28,CENTER+4:10"

@@ -1,6 +1,4 @@
 /spell/targeted/swap
-	name = "swap"
-	desc = "This spell swaps the positions of the wizard and a target. Causes brain damage."
 	feedback = "SW"
 	school = "conjuration"
 
