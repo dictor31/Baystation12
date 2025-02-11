@@ -52,7 +52,7 @@ var/global/list/outfits_singletons_by_type_
 	var/id_pda_assignment
 
 	var/list/backpack_overrides
-	var/flags = OUTFIT_RESET_EQUIPMENT
+	var/flags = OUTFIT_NONE
 
 /singleton/hierarchy/outfit/New()
 	..()

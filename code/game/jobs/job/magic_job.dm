@@ -37,3 +37,15 @@
 	spawn_positions = 1
 	supervisors = "Только Боги могут тобой командовать"
 	outfit_type = /singleton/hierarchy/outfit/hot
+
+/datum/job/
+
+/datum/job/guard
+	title = "Патрульный"
+	department = "Охрана"
+	department_flag = SEC
+
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "Глава поселения"
+	outfit_type = /singleton/hierarchy/outfit/guard

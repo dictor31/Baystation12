@@ -303,7 +303,7 @@
 		"Власть" =          list(jobs = list(), dep = COM, color = "#aac1ee"),
 		"Command Support" = list(jobs = list(), dep = SPT, color = "#aac1ee"),
 		"Нейтралы" =        list(jobs = list(), dep = NEU, color = "#ffd699"),
-		"Security" =        list(jobs = list(), dep = SEC, color = "#ff9999"),
+		"Охрана" =          list(jobs = list(), dep = SEC, color = "#ff9999"),
 //		"Miscellaneous" =   list(jobs = list(), dep = CIV, color = "#ffffff", colBreak = 1),
 		"Synthetics" =      list(jobs = list(), dep = MSC, color = "#ccffcc"),
 		"Service" =         list(jobs = list(), dep = SRV, color = "#cccccc"),
