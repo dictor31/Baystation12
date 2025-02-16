@@ -29,7 +29,8 @@
 		reagents.add_reagent(/datum/reagent/nutriment, nutriment_amt, nutriment_desc)
 
 
-/obj/item/reagent_containers/food/snacks/proc/OnConsume(mob/living/consumer, mob/living/feeder)
+/obj/item/reagent_containers/food/snacks/proc/OnConsume(mob/living/carbon/human/consumer, mob/living/feeder)
+	consumer.switch_happy(100)
 	if (reagents && reagents.total_volume)
 		return
 	if (consumer)
@@ -123,6 +124,7 @@
 			else
 				reagents.trans_to_mob(M, reagents.total_volume, CHEM_INGEST)
 			bitecount++
+
 			OnConsume(M, user)
 	return TRUE
 

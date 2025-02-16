@@ -1,6 +1,15 @@
+
+/mob/living/carbon/human/proc/switch_happy(value)
+	happy += value
+	if(happy > max_happy)
+		happy = max_happy
+	if(happy < 0)
+		happy = 0
+
+
 /mob/living/carbon/human
-	var/max_happy = 5000
-	var/happy = 3000
+	var/max_happy = 1000
+	var/happy = 500
 
 
 /mob/verb/show_happy()

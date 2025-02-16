@@ -60,6 +60,7 @@
 	if(hud_data.has_a_intent)
 
 		using = new /obj/screen/intent()
+		using = new /obj/screen/happy()
 		src.adding += using
 		action_intent = using
 
@@ -178,14 +179,6 @@
 		mymob.internals.SetName("internal")
 		mymob.internals.screen_loc = ui_internal
 		hud_elements |= mymob.internals
-
-	if(hud_data.has_happy)
-		mymob.state_happy = new /obj/screen()
-		mymob.state_happy.icon = ui_style
-		mymob.state_happy.icon_state = "template"
-		mymob.state_happy.SetName("Радость")
-		mymob.state_happy.screen_loc = ui_happy
-		hud_elements |= mymob.state_happy
 
 	if(hud_data.has_warnings)
 		mymob.healths = new /obj/screen()

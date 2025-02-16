@@ -186,12 +186,32 @@
 /obj/screen/intent/on_update_icon()
 	icon_state = "intent_[intent]"
 
+/obj/screen/happy
+	name = "Радость"
+	icon = 'icons/mob/happy_bar.dmi'
+	icon_state = "100"
+	screen_loc = ui_happy
+
+/obj/screen/happy/Click(location, control, params)
+	update_icon()
+
+/obj/screen/happy/on_update_icon()
+	var/mob/living/carbon/human/H = usr
+	switch(H.happy)
+		if(0 to 50)
+			icon_state = "0"
+		if(51 to 250)
+			icon_state = "25"
+		if(251 to 500)
+			icon_state = "50"
+		if(501 to 750)
+			icon_state = "75"
+		if(751 to 1000)
+			icon_state = "100"
+
 /obj/screen/Click(location, control, params)
 	if(!usr)	return 1
 	switch(name)
-		if("Радость")
-			usr.show_happy()
-
 		if("toggle")
 			if(usr.hud_used.inventory_shown)
 				usr.hud_used.inventory_shown = 0
