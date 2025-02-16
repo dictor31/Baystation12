@@ -7,4 +7,4 @@ GLOBAL_DATUM_INIT(alternates, /datum/antagonist/alternate, new)
 	role_text = "Alternate"
 	role_text_plural = "Alternates"
 	antaghud_indicator = "hud_traitor"
-	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN | ANTAG_VOTABLE
+	flags = ANTAG_SUSPICIOUS | ANTAG_RANDSPAWN

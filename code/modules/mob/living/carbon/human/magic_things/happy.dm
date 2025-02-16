@@ -31,12 +31,7 @@
 		return
 
 	var/mob/living/carbon/human/T = G.affecting
-
-	steal_happy(T)
-
-/mob/living/carbon/human/proc/steal_happy(mob/living/carbon/human/target)
 	var/mob/living/carbon/human/H = usr
-	var/mob/living/carbon/human/T = target
 
 	if(!can_steal_happy(T))
 		return
@@ -45,7 +40,6 @@
 		var/how_much = rand(1, 10)
 		H.happy += how_much
 		T.happy -= how_much
-
 
 /mob/living/carbon/human/proc/can_steal_happy(mob/living/carbon/human/target)
 	var/obj/item/grab/G = src.get_active_hand()
@@ -64,6 +58,7 @@
 
 	var/mob/living/carbon/human/T = G.affecting
 	if(!istype(T))
+		to_chat(src, SPAN_WARNING("Мне нужен человек"))
 		return FALSE
 
 	return TRUE

@@ -7,7 +7,8 @@
 	switch(assigned_mob)
 		if("Высший сборщик")
 			H.mind?.learned_spells = list(
-			new /spell/targeted/projectile/dumbfire/stuncuff
+			new /spell/targeted/projectile/dumbfire/stuncuff,
+			new /spell/targeted/projectile/dumbfire/fireball
 			)
 
 

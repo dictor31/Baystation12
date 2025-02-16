@@ -5,23 +5,17 @@
 /mob/living/carbon/human/verb/combat_mode()
 	set name = "Боевой режим"
 	set instant = 1
-	set category = "IC"
-	var/mob/living/carbon/human/H = usr
+	set category = "Magic"
 
-	H.toggle_combat_mode()
-
-/mob/living/carbon/human/proc/toggle_combat_mode()
-	var/mob/living/carbon/human/H = usr
-
-	if(H.combat_mode)
-		H.combat_mode = 0
-		to_chat(H, "Я выдохся")
+	if(combat_mode)
+		combat_mode = 0
+		to_chat(usr, "Я выдохся")
 	else
-		H.combat_mode = 1
-		to_chat(H, "Я готов")
+		combat_mode = 1
+		to_chat(usr, "Я готов")
 
 /mob/verb/cast_plus_intent()
-	set category = "IC"
+	set category = "Magic"
 	set hidden = 1
 
 	var/mob/living/carbon/human/H = usr
@@ -43,70 +37,61 @@
 
 /mob/living/carbon/human/verb/create_spell()
 	set name = "Наколдовать"
-	set category = "IC"
+	set category = "Magic"
 
 	var/obj/item/clothing/accessory/magic_crystal/MC
-	var/mob/living/carbon/human/H = usr
 
-	if(H.combat_mode)
-		have_crystal()
-		if(crystal)
-			MC = crystal
-			for (var/spell/S in H.mind?.learned_spells)
-				if(MC.charge >= S.cost_charge)
-					if(S.cast_combo ~= cast_spell_bar)
-						S.perform()
-						MC.charge -= S.cost_charge
-						break
-				else
-					to_chat(H, "У меня недостаточно сил")
-					break
+	if(!combat_mode)
+		return
+
+	if(!have_crystal())
+		to_chat(usr, "У меня нет МОЕЙ прелести")
+		cast_spell_bar?.Cut()
+		return
+
+	MC = crystal
+	for (var/spell/S in mind?.learned_spells)
+		if(MC.charge < S.cost_charge)
+			to_chat(usr, "У меня недостаточно сил")
+			return
+
+		if(S.cast_combo ~= cast_spell_bar)
+			S.perform()
+			MC.charge -= S.cost_charge
 			cast_spell_bar?.Cut()
-		else
-			to_chat(H, "У меня нет МОЕЙ прелести")
-			cast_spell_bar?.Cut()
+			return
 
 /mob/living/carbon/human/proc/have_crystal()
 	crystal = 0
-	var/mob/living/carbon/human/H = usr
 	var/obj/item/clothing/accessory/magic_crystal/MC
 
-	for(var/obj/item/I in H.contents)
+	for(var/obj/item/I in contents)
 		if(istype(I, /obj/item/clothing/accessory/magic_crystal))
 			MC = I
-			if(MC.owner == H)
+			if(MC.owner == usr)
 				crystal = I
-				break
+				return TRUE
 
 		else if(istype(I, /obj/item/clothing/under/magic))
 			for(var/obj/item/clothing/accessory/A in I.contents)
 				if(istype(A, /obj/item/clothing/accessory/magic_crystal))
 					MC = A
-					if(MC.owner == H)
+					if(MC.owner == usr)
 						crystal = A
-						break
-
-		else if(istype(I, /obj/item/storage))
-			for(var/obj/item/I2 in I.contents)
-				if(istype(I2, /obj/item/clothing/accessory/magic_crystal))
-					MC = I2
-					if(MC.owner == H)
-						crystal = I2
-						break
-
+						return TRUE
+	return FALSE
 
 /mob/living/carbon/human/verb/delete_cast_spell_bar()
 	set name = "Очистить заклинание"
-	set category = "IC"
+	set category = "Magic"
 
 	cast_spell_bar?.Cut()
 
 /mob/living/carbon/human/verb/remember_spells()
 	set name = "Вспомни"
-	set category = "IC"
+	set category = "Magic"
 
-	var/mob/living/carbon/human/H = usr
-	for(var/spell/S in H.mind?.learned_spells)
+	for(var/spell/S in mind?.learned_spells)
 		var/combo
 		var/color
 		combo += "<b>[S.name]:</b> " + "<br>"
@@ -125,4 +110,4 @@
 					color = "red"
 					A = "noxa"
 			combo += "<FONT FACE = Capoon COLOR = [color]><b><i>[A] </i></b></FONT>"
-		to_chat(H, combo)
+		to_chat(usr, combo)

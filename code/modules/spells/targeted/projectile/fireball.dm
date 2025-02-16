@@ -25,6 +25,10 @@
 	hud_state = "wiz_fireball"
 	cast_sound = 'sound/magic/fireball.ogg'
 
+/spell/targeted/projectile/dumbfire/fireball/perform(mob/user, skipcharge)
+	var/mob/living/carbon/human/H = usr
+	H.put_in_active_hand(new /obj/item/projectile/spell_projectile/fireball)
+
 /spell/targeted/projectile/dumbfire/fireball/prox_cast(list/targets, spell_holder)
 	for(var/mob/living/M in targets)
 		apply_spell_damage(M)
@@ -49,6 +53,7 @@
 /obj/item/projectile/spell_projectile/fireball
 	name = "fireball"
 	icon_state = "fireball"
+	carried = /obj/item/projectile/spell_projectile/fireball
 
 /spell/targeted/projectile/dumbfire/fireball/firebolt
 	name = "Firebolt"

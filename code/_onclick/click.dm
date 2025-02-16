@@ -167,6 +167,10 @@
 				RangedAttack(A, modifiers)
 
 			trigger_aiming(TARGET_CAN_CLICK)
+	if(istype(W, /obj/item/projectile/spell_projectile))
+		var/obj/item/projectile/spell_projectile/fireball = W
+		fireball.prox_cast(A)
+		return
 	return
 
 /mob/proc/setClickCooldown(timeout)

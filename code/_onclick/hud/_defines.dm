@@ -134,3 +134,4 @@
 
 //magic
 #define ui_happy "EAST-1:28,CENTER+4:10"
+#define ui_battle_button "EAST-2:28,CENTER+4:10"
