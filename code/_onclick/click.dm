@@ -168,10 +168,14 @@
 
 			trigger_aiming(TARGET_CAN_CLICK)
 	if(istype(W, /obj/item/projectile/spell_projectile))
-		var/obj/item/projectile/spell_projectile/fireball = W
-		fireball.prox_cast(A)
+		throw_magic_projectile(W, A)
+		qdel(W)
 		return
 	return
+
+/mob/proc/throw_magic_projectile(obj/item/projectile/spell_projectile/sphere, atom/target)
+	var/obj/item/projectile/spell_projectile/projectile = new sphere.carried.proj_type
+	projectile.Fire(target)
 
 /mob/proc/setClickCooldown(timeout)
 	next_move = max(world.time + timeout, next_move)

@@ -19,6 +19,9 @@
 	var/obj/screen/using
 	var/obj/screen/inventory/inv_box
 
+	using = new /obj/screen/happy() //Индикатор радости
+	adding += using
+
 	stamina_bar = new
 	adding += stamina_bar
 
@@ -58,9 +61,7 @@
 
 	// Draw the attack intent dialogue.
 	if(hud_data.has_a_intent)
-
 		using = new /obj/screen/intent()
-		using = new /obj/screen/happy()
 		src.adding += using
 		action_intent = using
 

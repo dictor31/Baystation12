@@ -43,3 +43,4 @@
 /obj/item/projectile/spell_projectile/stuncuff
 	name = "stuncuff"
 	icon_state = "spell"
+	carried = new /spell/targeted/projectile/dumbfire/stuncuff

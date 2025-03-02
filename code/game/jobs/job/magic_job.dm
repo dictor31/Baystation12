@@ -29,7 +29,7 @@
 	outfit_type = /singleton/hierarchy/outfit/medic/head
 
 /datum/job/hot
-	title = "Повелитель"
+	title = "Управляющий"
 	department = "Власть"
 	department_flag = COM
 
@@ -37,8 +37,6 @@
 	spawn_positions = 1
 	supervisors = "Только Боги могут тобой командовать"
 	outfit_type = /singleton/hierarchy/outfit/hot
-
-/datum/job/
 
 /datum/job/guard
 	title = "Патрульный"

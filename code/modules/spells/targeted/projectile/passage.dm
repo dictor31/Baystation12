@@ -44,3 +44,4 @@
 /obj/item/projectile/spell_projectile/passage
 	name = "spell"
 	icon_state = "energy2"
+	carried = new /spell/targeted/projectile/dumbfire/passage

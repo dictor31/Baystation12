@@ -2,14 +2,21 @@
 	var/list/cast_spell_bar = list()
 
 /mob/proc/get_knowledge_spells()
-	var/mob/living/carbon/human/H = usr
-	var/assigned_mob = H.mind.assigned_role
-	switch(assigned_mob)
-		if("Высший сборщик")
-			H.mind?.learned_spells = list(
-			new /spell/targeted/projectile/dumbfire/stuncuff,
-			new /spell/targeted/projectile/dumbfire/fireball
-			)
+	var/assigned_mob = mind.assigned_job
+
+	if(istype(assigned_mob, /datum/job/collector))
+		mind?.learned_spells = list(
+		new /spell/targeted/projectile/dumbfire/fireball,
+		new /spell/targeted/projectile/magic_missile,
+		new /spell/targeted/projectile/dumbfire/passage,
+		new /spell/aoe_turf/blink,
+		new /spell/aoe_turf/conjure/forcewall,
+		new /spell/invisibility,
+		new /spell/aoe_turf/smoke,
+		new /spell/targeted/swap,
+		new /spell/targeted/ethereal_jaunt,
+		new /spell/targeted/genetic/blind
+		)
 
 
 /spell/targeted/projectile/dumbfire/fireball
@@ -27,7 +34,7 @@
 /spell/targeted/projectile/dumbfire/passage
 	name = "Прыжок"
 	desc = "Заклинание телепортации, что телепортирует к той точке, об которую ударился снаряд"
-	cast_combo = list(I_GRAB)
+	cast_combo = list(I_GRAB, I_HELP)
 	cost_charge = 200
 
 /spell/aoe_turf/conjure/forcewall

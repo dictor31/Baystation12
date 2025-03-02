@@ -13,7 +13,7 @@
 
 	max_targets = 0
 
-	proj_type = /obj/item/projectile/spell_projectile/seeking/magic_missile
+	proj_type = /obj/item/projectile/spell_projectile/magic_missile
 	duration = 10
 	proj_step_delay = 5
 
@@ -21,8 +21,6 @@
 	cast_sound = 'sound/magic/magic_missile.ogg'
 	amt_paralysis = 3
 	amt_stunned = 3
-
-	amt_dam_fire = 10
 
 /spell/targeted/projectile/magic_missile/prox_cast(list/targets, atom/spell_holder)
 	spell_holder.visible_message(SPAN_DANGER("\The [spell_holder] pops with a flash!"))
@@ -39,7 +37,6 @@
 		amt_paralysis += 2
 		amt_stunned += 2
 		return "[src] will now stun people for a longer duration."
-	amt_dam_fire += 5
 
 	return "[src] does more damage now."
 
@@ -47,10 +44,7 @@
 
 //PROJECTILE
 
-/obj/item/projectile/spell_projectile/seeking/magic_missile
+/obj/item/projectile/spell_projectile/magic_missile
 	name = "magic missile"
 	icon_state = "magicm"
-
-	proj_trail = 1
-	proj_trail_lifespan = 5
-	proj_trail_icon_state = "magicmd"
+	carried = new /spell/targeted/projectile/magic_missile
