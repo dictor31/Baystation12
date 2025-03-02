@@ -23,19 +23,19 @@
 	name = "Огненный шар"
 	desc = "Классическое заклинание разрушительного огненного шара"
 	cast_combo = list(I_HURT, I_HURT)
-	cost_charge = 300
+	cost_charge = 2
 
 /spell/aoe_turf/blink
 	name = "Скачок"
 	desc = "Заклинание телепортации, что случайно телепортирует на короткую дистанцию"
 	cast_combo = list(I_DISARM)
-	cost_charge = 100
+	cost_charge = 1
 
 /spell/targeted/projectile/dumbfire/passage
 	name = "Прыжок"
 	desc = "Заклинание телепортации, что телепортирует к той точке, об которую ударился снаряд"
 	cast_combo = list(I_GRAB, I_HELP)
-	cost_charge = 200
+	cost_charge = 1
 
 /spell/aoe_turf/conjure/forcewall
 	name = "Барьер"

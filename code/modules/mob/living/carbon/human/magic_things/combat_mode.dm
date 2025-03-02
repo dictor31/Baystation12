@@ -51,15 +51,22 @@
 
 	MC = crystal
 	for (var/spell/S in mind?.learned_spells)
-		if(MC.charge < S.cost_charge)
+		if(S.cast_combo ~! cast_spell_bar)
+			to_chat(usr, "Кажется, я ошибся")
+			return
+
+		var/points = MC.charge.Find(0) - 1
+		if(points < S.cost_charge)
 			to_chat(usr, "У меня недостаточно сил")
 			return
 
-		if(S.cast_combo ~= cast_spell_bar)
-			S.perform()
-			MC.charge -= S.cost_charge
-			cast_spell_bar?.Cut()
-			return
+		S.perform()
+		var/i = S.cost_charge
+		for(i, i > 0, i--)
+			MC.charge[points] = FALSE
+			points--
+		cast_spell_bar?.Cut()
+		return
 
 /mob/living/carbon/human/proc/have_crystal()
 	crystal = 0
